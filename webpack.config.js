@@ -2,13 +2,16 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-
+  devtool: "source-map",
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "Textify.min.js",
-    library: "Textify",
-    libraryTarget: "umd",
+    clean: true,
+    library: {
+      name: "Textify.js",
+      type: "umd"
+    },
     environment: {
       arrowFunction: false
     }
