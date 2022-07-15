@@ -1,5 +1,4 @@
-console.log(Textify);
-const paragraphs = document.querySelectorAll(".paragraph");
-paragraphs.forEach((paragraph) => {
-  Textify(paragraph);
-});
+// const text = require("Textify");
+// import Textify from "textify.js";
+import Textify from "../dist/Textify.min.js";
+new Textify();

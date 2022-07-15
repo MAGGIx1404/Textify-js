@@ -1,14 +1,15 @@
 {
   "name": "textify.js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testing",
   "main": "./dist/Textify.min.js",
   "module": "./src/index.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack",
     "lint": "eslint  \"./src/**/*.js\" --fix",
-    "format": "prettier --write \"./src/**/*.js\""
+    "format": "prettier --write \"./src/**/*.js\"",
+    "start": "webpack-dev-server --mode development --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/MAGGIx1404/Textify.js#readme",
   "devDependencies": {
     "@babel/core": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "auto-bind": "^5.0.1",
     "babel-loader": "^8.2.5",
@@ -31,6 +33,7 @@
     "prefix": "^1.0.0",
     "prettier": "^2.7.1",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
   }
 }

@@ -1,76 +1,51 @@
 import { each } from "lodash";
 import { cssEasing } from "./Utils/easing";
 import { calculate, split } from "./Utils/texts";
-import Prefix from "prefix";
-import browserCheck from "./Utils/browserCheck";
+// import browserCheck from "./Utils/browserCheck";
+import Animation from "./Components/Animation";
 
-class Textify {
-  static get id() {
-    return "Textify";
-  }
-  constructor(element, options = {}) {
-    if (!element || !browserCheck()) return;
-    const controls = {
-      delay: 1,
-      speed: 1
-    };
-
-    this.options = { controls, options };
-    console.log(this.options);
-
+export default class Textify extends Animation {
+  constructor() {
+    // if(!element || !browserCheck()) return;
     const lines = [];
-    const paragraphs = element.querySelectorAll("h1, h2, h3, h4, h5, h6, p");
+    const element = document.querySelectorAll("[data-textify-animation]");
+    // const paragraphs = element.querySelectorAll("h1, h2, p");
 
-    if (paragraphs.length !== 0) {
-      each(paragraphs, (element) => {
+    element.forEach((el) => {
+      const paragraphs = el.querySelectorAll("h1, h2, p");
+      if (paragraphs.length !== 0) {
+        each(paragraphs, (element) => {
+          split({ element });
+          split({ element });
+          lines.push(...element.querySelectorAll("span span"));
+        });
+      } else {
         split({ element });
         split({ element });
-
         lines.push(...element.querySelectorAll("span span"));
-      });
-    } else {
-      split({ element });
-      split({ element });
-      lines.push(...element.querySelectorAll("span span"));
-    }
+      }
+    });
 
-    const { animationDelay, animationTarget } = element.dataset;
-    this.element = element;
-    this.delay = animationDelay;
-
-    this.target = animationTarget ? element.closest(animationTarget) : element;
-    this.transformPrefix = Prefix("transform");
-    this.isVisible = false;
+    super({
+      element,
+      elements: {
+        lines
+      }
+    });
 
     this.onResize();
 
     if ("IntersectionObserver" in window) {
-      this.createObserver();
       this.animateOut();
-    } else {
-      this.animateIn();
     }
   }
 
-  createObserver() {
-    this.observer = new window.IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!this.isVisible && entry.isIntersecting) {
-          this.animateIn();
-          observer.unobserve(entry.target);
-        } else {
-          this.animateOut();
-        }
-      });
-    }).observe(this.target);
-  }
-
   animateIn() {
-    this.isVisible = true;
+    super.animateIn();
 
     each(this.lines, (line, lineIndex) => {
       each(line, (word) => {
-        word.style.transition = `transform 1.45s ${lineIndex * 0.1}s ${cssEasing.default}, opacity 1s ${lineIndex * 0.1}s ${CSS}`;
+        word.style.transition = `transform 1.45s ${lineIndex * 0.1}s ${cssEasing.default}, opacity 1s ${lineIndex * 0.1}s ${cssEasing}`;
         word.style[this.transformPrefix] = "translateY(0) rotate(0)";
         word.style.opacity = "1";
       });
@@ -78,7 +53,7 @@ class Textify {
   }
 
   animateOut() {
-    this.isVisible = false;
+    super.animateOut();
 
     each(this.lines, (line) => {
       each(line, (word) => {
@@ -94,5 +69,3 @@ class Textify {
 }
 
 console.log(Textify);
-
-export default Textify;

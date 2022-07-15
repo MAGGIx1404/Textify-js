@@ -1,0 +1,17 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "textify.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
