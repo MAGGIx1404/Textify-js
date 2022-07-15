@@ -8,22 +8,13 @@ export default class Textify extends Animation {
   constructor() {
     // if(!element || !browserCheck()) return;
     const lines = [];
-    const element = document.querySelectorAll("[data-textify-animation]");
+    let element = document.querySelectorAll("[data-textify-animation]");
     // const paragraphs = element.querySelectorAll("h1, h2, p");
 
     element.forEach((el) => {
-      const paragraphs = el.querySelectorAll("h1, h2, p");
-      if (paragraphs.length !== 0) {
-        each(paragraphs, (element) => {
-          split({ element });
-          split({ element });
-          lines.push(...element.querySelectorAll("span span"));
-        });
-      } else {
-        split({ element });
-        split({ element });
-        lines.push(...element.querySelectorAll("span span"));
-      }
+      split({ el });
+      split({ el });
+      lines.push(...element.querySelectorAll("span span"));
     });
 
     super({

@@ -1,7 +1,15 @@
 import each from "lodash/each";
 
-export function split({ element, expression = " ", append = true }) {
-  const words = splitText(element.innerHTML.toString().trim(), expression);
+export function split({ expression = " ", append = true }) {
+  const element = [...document.querySelectorAll("[data-textify-animation]")];
+  let words;
+  for (let i = 0; i <= element.length; i++) {
+    words = splitText(element[i].innerHTML, expression);
+    element[i].innerHTML = "";
+    words.forEach((word) => {
+      element[i].innerHTML += parseLine(word);
+    });
+  }
 
   let innerHTML = "";
 
