@@ -1,62 +1,27 @@
-import { each } from "lodash";
-import { cssEasing } from "./Utils/easing";
-import { calculate, split } from "./Utils/texts";
-// import browserCheck from "./Utils/browserCheck";
-import Animation from "./Components/Animation";
+import Text from "./Animations/Text";
+import { mapEach } from "./Utils/dom";
 
-export default class Textify extends Animation {
+export default class Textify {
   constructor() {
-    // if(!element || !browserCheck()) return;
-    const lines = [];
-    let element = document.querySelectorAll("[data-textify-animation]");
-    // const paragraphs = element.querySelectorAll("h1, h2, p");
-
-    element.forEach((el) => {
-      split({ el });
-      split({ el });
-      lines.push(...element.querySelectorAll("span span"));
-    });
-
-    super({
-      element,
-      elements: {
-        lines
-      }
-    });
-
-    this.onResize();
-
-    if ("IntersectionObserver" in window) {
-      this.animateOut();
-    }
+    this.element = document.querySelectorAll("[data-textify]");
+    console.log(this.element);
+    this.createAnimation();
+    this.events();
   }
 
-  animateIn() {
-    super.animateIn();
-
-    each(this.lines, (line, lineIndex) => {
-      each(line, (word) => {
-        word.style.transition = `transform 1.45s ${lineIndex * 0.1}s ${cssEasing.default}, opacity 1s ${lineIndex * 0.1}s ${cssEasing}`;
-        word.style[this.transformPrefix] = "translateY(0) rotate(0)";
-        word.style.opacity = "1";
-      });
+  createAnimation() {
+    this.animation = mapEach(this.element, (element) => {
+      return new Text({ element });
     });
   }
 
-  animateOut() {
-    super.animateOut();
-
-    each(this.lines, (line) => {
-      each(line, (word) => {
-        word.style[this.transformPrefix] = "translateY(-200%) rotate(-20deg)";
-        word.style.opacity = "0";
-      });
-    });
+  events() {
+    window.addEventListener("resize", this.onResize.bind(this));
   }
 
   onResize() {
-    this.lines = calculate(this.elements.lines);
+    this.animation.forEach((animation) => {
+      animation.onResize();
+    });
   }
 }
-
-console.log(Textify);
