@@ -1,9 +1,14 @@
 {
   "name": "textify.js",
-  "version": "1.0.0",
-  "description": "Testing",
+  "version": "1.0.1",
+  "description": "Testing demoes",
   "main": "./dist/Textify.min.js",
   "module": "./src/index.js",
+  "keywords": [
+    "Text-Animation",
+    "Text-Animation-Library",
+    "scroll-based-text-animation"
+  ],
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack",
