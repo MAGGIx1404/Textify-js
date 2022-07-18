@@ -12,8 +12,6 @@ export default class Textify extends Animation {
     // const paragraphs = element.querySelectorAll("h1, h2, p");
 
     element.forEach((el) => {
-      this.split({ el });
-      this.split({ el });
       lines.push(...element.querySelectorAll("span span"));
     });
 
