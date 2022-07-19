@@ -4,7 +4,12 @@ import { cssEasing } from "../Utils/easing";
 import { calculate, split } from "../Utils/texts";
 
 export default class extends Animation {
-  constructor({ element }) {
+  /**
+   * @constructor
+   * @param {HTMLElement} element - Target element
+   * @param {object} options - Options of Textify.js
+   */
+  constructor({ element, options = {} }) {
     const lines = [];
     const paragraphs = element.querySelectorAll("h1, h2, p");
 
@@ -29,6 +34,23 @@ export default class extends Animation {
       }
     });
 
+    /**
+     * defaults values of options for Textify.js
+     */
+    const defaults = {
+      duration: 1.45,
+      delay: 0.1,
+      fade: true,
+      fadeEaseing: cssEasing.default,
+      top: false,
+      rotation: 0,
+      easing: cssEasing.default
+    };
+    this.options = Object.assign({}, defaults, options);
+
+    /**
+     * on resize event
+     * */
     this.onResize();
 
     if ("IntersectionObserver" in window) {
@@ -41,9 +63,11 @@ export default class extends Animation {
 
     each(this.lines, (line, lineIndex) => {
       each(line, (word) => {
-        word.style.transition = `transform 1.45s ${lineIndex * 0.1}s ${cssEasing.default}, opacity 1s ${lineIndex * 0.1}s ${cssEasing.default}`;
+        word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
+          this.options.duration - 0.1
+        }s ${lineIndex * this.options.delay}s ${this.options.fadeEaseing}`;
         word.style[this.transformPrefix] = "translateY(0) rotate(0)";
-        word.style.opacity = "1";
+        this.options.fade ? (word.style.opacity = "1") : null;
       });
     });
   }
@@ -53,8 +77,8 @@ export default class extends Animation {
 
     each(this.lines, (line) => {
       each(line, (word) => {
-        word.style[this.transformPrefix] = "translateY(-200%) rotate(-20deg)";
-        word.style.opacity = "0";
+        word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}100%) rotate(${this.options.rotation}deg)`;
+        this.options.fade ? (word.style.opacity = "0") : null;
       });
     });
   }

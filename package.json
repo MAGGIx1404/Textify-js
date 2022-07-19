@@ -1,6 +1,5 @@
 {
   "name": "textify.js",
-<<<<<<< HEAD
   "version": "1.1.0",
   "description": "Testing demoes",
   "main": "./dist/Textify.min.js",
@@ -10,12 +9,6 @@
     "Text-Animation-Library",
     "scroll-based-text-animation"
   ],
-=======
-  "version": "1.0.0",
-  "description": "Testing",
-  "main": "./dist/Textify.min.js",
-  "module": "./src/index.js",
->>>>>>> add-license-1
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack",
