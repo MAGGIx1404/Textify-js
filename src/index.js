@@ -1,13 +1,12 @@
 import Text from "./Animations/Text";
 import { mapEach } from "./Utils/dom";
-<<<<<<< HEAD
 import { each } from "lodash";
 import { cssEasing } from "./Utils/easing";
 
 export default class Textify {
   /**
    * @constructor
-   * @param {object} options - Options of ukiyo.js
+   * @param {object} options - Options of Textify.js
    */
   constructor(options = {}) {
     // animation's elements
@@ -17,22 +16,12 @@ export default class Textify {
       duration: 1.45,
       delay: 0.1,
       fade: false,
-      fadeEaseing: cssEasing.default,
       top: false,
       rotation: 0,
+      fadeEaseing: cssEasing.default,
       easing: cssEasing.default
     };
     this.controller = Object.assign({}, defaults, options);
-=======
-
-export default class Textify {
-  constructor() {
-    this.element = document.querySelectorAll("[data-textify]");
-    console.log(this.element);
-    this.createAnimation();
-    this.events();
-  }
->>>>>>> test
 
     /**
      * create main animation
@@ -61,16 +50,10 @@ export default class Textify {
   }
 
   onResize() {
-<<<<<<< HEAD
     each(this.animations, (animation) => {
       animation.onResize && animation.onResize();
     });
     console.log("animations resized");
-=======
-    this.animation.forEach((animation) => {
-      animation.onResize();
-    });
->>>>>>> test
   }
 }
 console.log(Textify);
