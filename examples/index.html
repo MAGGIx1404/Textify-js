@@ -23,14 +23,6 @@
             line-height: 2;
         }
 
-
-        .textify span {
-            display: inline-block;
-            overflow: hidden;
-            vertical-align: top;
-            transform-origin: center;
-        }
-
     </style>
 </head>
 
@@ -89,7 +81,7 @@
         aperiam laudantium magnam tempora enim? Ex qui sapiente doloremque? Et minus dolores soluta possimus blanditiis
         illo at rem quisquam est eius.
     </p>
-    <p class="textify">
+    <p class="textify" id="textify">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aut blanditiis sed delectus? Alias, commodi
         obcaecati vitae tempore deserunt voluptates eos recusandae aut. Ipsa distinctio explicabo nam error consequatur
         aperiam laudantium magnam tempora enim? Ex qui sapiente doloremque? Et minus dolores soluta possimus blanditiis
@@ -97,7 +89,15 @@
     </p>
     <script src="../dist/Textify.min.js"></script>
     <script>
-        const textify = new Textify();
+        const textify = new Textify({
+            duration: 1,
+            easing: "bounceIn",
+            once: false,
+            top: true,
+            fade: true,
+            rotation: -30,
+            selector: ".textify"
+        });
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/textify.js@1.1.0/dist/Textify.min.js" defer></script> -->
     <!-- <script src="./app.js"></script> -->

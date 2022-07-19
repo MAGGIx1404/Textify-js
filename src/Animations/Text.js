@@ -1,30 +1,35 @@
 import each from "lodash/each";
-import Animation from "../Components/Animation";
-import { cssEasing } from "../Utils/easing";
-import { calculate, split } from "../Utils/texts";
 
+// -------------------------------------------------------------------------------
+import Animation from "../Components/Animation";
+
+// -------------------------------------------------------------------------------
+import { calculate, split } from "../Utils/texts";
+import { DEFAULT } from "../Utils/defaults";
+
+// -------------------------------------------------------------------------------
 export default class extends Animation {
   /**
    * @constructor
    * @param {HTMLElement} element - Target element
-   * @param {object} options - Options of Textify.js
+   * @param {object} options - Configuration options of Textify.js
    */
   constructor({ element, options = {} }) {
     const lines = [];
     const paragraphs = element.querySelectorAll("h1, h2, p");
 
+    if (paragraphs.length === 0) {
+      split({ element });
+      split({ element });
+      lines.push(...element.querySelectorAll("span span"));
+    }
+
     if (paragraphs.length !== 0) {
       each(paragraphs, (element) => {
         split({ element });
         split({ element });
-
         lines.push(...element.querySelectorAll("span span"));
       });
-    } else {
-      split({ element });
-      split({ element });
-
-      lines.push(...element.querySelectorAll("span span"));
     }
 
     super({
@@ -34,19 +39,10 @@ export default class extends Animation {
       }
     });
 
-    /**
-     * defaults values of options for Textify.js
-     */
-    const defaults = {
-      duration: 1.45,
-      delay: 0.1,
-      fade: true,
-      fadeEasing: cssEasing.default,
-      top: false,
-      rotation: 0,
-      easing: cssEasing.default
-    };
-    this.options = Object.assign({}, defaults, options);
+    this.options = Object.assign({}, DEFAULT, options);
+
+    // number of time the animation will be repeated
+    this.repeat = this.options.once;
 
     /**
      * on resize event
@@ -58,6 +54,7 @@ export default class extends Animation {
     }
   }
 
+  // --------
   animateIn() {
     super.animateIn();
 
@@ -72,6 +69,7 @@ export default class extends Animation {
     });
   }
 
+  // --------
   animateOut() {
     super.animateOut();
 
@@ -83,6 +81,7 @@ export default class extends Animation {
     });
   }
 
+  // --------
   onResize() {
     this.lines = calculate(this.elements.lines);
   }

@@ -10,6 +10,7 @@ export default class Animation {
     this.delay = animationDelay;
     this.element = element;
     this.elements = elements;
+    this.repeat = false;
 
     this.target = animationTarget ? element.closest(animationTarget) : element;
     this.transformPrefix = Prefix("transform");
@@ -31,7 +32,7 @@ export default class Animation {
         entries.forEach((entry) => {
           if (!this.isVisible && entry.isIntersecting) {
             this.animateIn();
-            observer.unobserve(entry.target);
+            this.repeat ? observer.unobserve(entry.target) : null;
           } else {
             this.animateOut();
           }

@@ -1,4 +1,4 @@
-export const cssEasing = {
+const cssEasing = {
   easeInOut: "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
   easeOut: "cubic-bezier(0.23, 1, 0.32, 1)",
   easeIn: "cubic-bezier(0.42, 0, 1, 1)",
@@ -19,4 +19,12 @@ export const cssEasing = {
   circOut: "cubic-bezier(0.075, 0.82, 0.165, 1)",
   circInOut: "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
   default: "cubic-bezier(0.77, 0, 0.175, 1)"
+};
+
+export const getEasing = (easing) => {
+  if (easing && !cssEasing[easing]) {
+    throw new Error(`Invalid Easing ${easing} option.`);
+  }
+
+  return cssEasing[easing];
 };
