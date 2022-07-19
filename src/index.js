@@ -1,5 +1,6 @@
 import Text from "./Animations/Text";
 import { mapEach } from "./Utils/dom";
+<<<<<<< HEAD
 import { each } from "lodash";
 import { cssEasing } from "./Utils/easing";
 
@@ -22,6 +23,16 @@ export default class Textify {
       easing: cssEasing.default
     };
     this.controller = Object.assign({}, defaults, options);
+=======
+
+export default class Textify {
+  constructor() {
+    this.element = document.querySelectorAll("[data-textify]");
+    console.log(this.element);
+    this.createAnimation();
+    this.events();
+  }
+>>>>>>> test
 
     /**
      * create main animation
@@ -50,10 +61,16 @@ export default class Textify {
   }
 
   onResize() {
+<<<<<<< HEAD
     each(this.animations, (animation) => {
       animation.onResize && animation.onResize();
     });
     console.log("animations resized");
+=======
+    this.animation.forEach((animation) => {
+      animation.onResize();
+    });
+>>>>>>> test
   }
 }
 console.log(Textify);
