@@ -41,7 +41,7 @@ export default class extends Animation {
       duration: 1.45,
       delay: 0.1,
       fade: true,
-      fadeEaseing: cssEasing.default,
+      fadeEasing: cssEasing.default,
       top: false,
       rotation: 0,
       easing: cssEasing.default
@@ -65,7 +65,7 @@ export default class extends Animation {
       each(line, (word) => {
         word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
           this.options.duration - 0.1
-        }s ${lineIndex * this.options.delay}s ${this.options.fadeEaseing}`;
+        }s ${lineIndex * this.options.delay}s ${this.options.fadeEasing}`;
         word.style[this.transformPrefix] = "translateY(0) rotate(0)";
         this.options.fade ? (word.style.opacity = "1") : null;
       });

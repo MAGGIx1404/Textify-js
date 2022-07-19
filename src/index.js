@@ -18,7 +18,7 @@ export default class Textify {
       fade: false,
       top: false,
       rotation: 0,
-      fadeEaseing: cssEasing.default,
+      fadeEasing: cssEasing.default,
       easing: cssEasing.default
     };
     this.controller = Object.assign({}, defaults, options);
@@ -33,7 +33,7 @@ export default class Textify {
           duration: this.controller.duration,
           delay: this.controller.delay,
           fade: this.controller.fade,
-          fadeEaseing: this.controller.fadeEaseing,
+          fadeEasing: this.controller.fadeEasing,
           top: this.controller.top,
           rotation: this.controller.rotation,
           easing: this.controller.easing
