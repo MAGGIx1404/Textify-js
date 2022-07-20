@@ -87,4 +87,9 @@ export default class extends Animation {
   onResize() {
     this.lines = calculate(this.elements.lines);
   }
+
+  // --------
+  onRefresh() {
+    this.onResize();
+  }
 }

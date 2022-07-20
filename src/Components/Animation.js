@@ -1,10 +1,7 @@
-import AutoBind from "auto-bind";
 import Prefix from "prefix";
 
 export default class Animation {
   constructor({ element, elements }) {
-    AutoBind(this);
-
     const { animationDelay, animationTarget } = element.dataset;
 
     this.delay = animationDelay;

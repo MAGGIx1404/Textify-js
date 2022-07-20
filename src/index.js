@@ -21,7 +21,7 @@ export default class Textify {
     const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify]";
     this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
 
-    this.animation = mapEach(this.elements, (element) => {
+    this.animations = mapEach(this.elements, (element) => {
       return new Text({
         element,
         options: controller
