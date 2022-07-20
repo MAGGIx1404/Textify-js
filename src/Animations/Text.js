@@ -63,7 +63,7 @@ export default class extends Animation {
         word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
           this.options.duration - 0.1
         }s ${lineIndex * this.options.delay}s ${this.options.fadeEasing}`;
-        word.style[this.transformPrefix] = "translateY(0) rotate(0)";
+        word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
         this.options.fade ? (word.style.opacity = "1") : null;
       });
     });
@@ -75,7 +75,9 @@ export default class extends Animation {
 
     each(this.lines, (line) => {
       each(line, (word) => {
-        word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}100%) rotate(${this.options.rotation}deg)`;
+        word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}150%)  scale(${this.options.scale}) rotate(${
+          this.options.rotation
+        }deg)`;
         this.options.fade ? (word.style.opacity = "0") : null;
       });
     });

@@ -8,6 +8,7 @@ export const DEFAULT = {
   top: false,
   once: true,
   rotation: 0,
-  fadeEasing: getEasing("default"),
-  easing: getEasing("default")
+  scale: 1,
+  easing: getEasing("default"),
+  fadeEasing: getEasing("default")
 };

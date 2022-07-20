@@ -1,6 +1,3 @@
-import { each } from "lodash";
-
-// -------------------------------------------------------------------------------
 import Text from "./Animations/Text";
 import { mapEach } from "./Utils/dom";
 import { DEFAULT } from "./Utils/defaults";
@@ -27,13 +24,13 @@ export default class Textify {
     this.animation = mapEach(this.elements, (element) => {
       return new Text({
         element,
-        ...controller
+        options: controller
       });
     });
 
-    each(this.elements, (element) => {
+    this.elements.forEach((element) => {
       const spans = element.querySelectorAll("span");
-      each(spans, (span) => {
+      spans.forEach((span) => {
         span.style.display = "inline-block";
         span.style.overflow = "hidden";
         span.style.verticalAlign = "top";
@@ -51,7 +48,7 @@ export default class Textify {
 
   // --------
   onResize() {
-    each(this.animations, (animation) => {
+    this.animations.forEach((animation) => {
       animation.onResize && animation.onResize();
     });
   }

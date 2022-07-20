@@ -90,14 +90,13 @@
     <script src="../dist/Textify.min.js"></script>
     <script>
         const textify = new Textify({
-            duration: 1,
-            easing: "bounceIn",
+            selector: ".textify",
+            easing: "back",
+            rotation: "10",
             once: false,
-            top: true,
-            fade: true,
-            rotation: -30,
-            selector: ".textify"
+            scale: 0
         });
+        console.log(textify);
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/textify.js@1.1.0/dist/Textify.min.js" defer></script> -->
     <!-- <script src="./app.js"></script> -->
