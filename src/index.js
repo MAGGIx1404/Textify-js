@@ -46,10 +46,30 @@ export default class Textify {
     window.addEventListener("resize", this.onResize.bind(this));
   }
 
+  //   animations
+  show() {
+    this.animations.forEach((animation) => {
+      animation.animateIn();
+    });
+  }
+
+  hide() {
+    this.animations.forEach((animation) => {
+      animation.animateOut();
+    });
+  }
+
   // --------
   onResize() {
     this.animations.forEach((animation) => {
       animation.onResize && animation.onResize();
+    });
+  }
+
+  // --------
+  onRefresh() {
+    this.animations.forEach((animation) => {
+      animation.onRefresh && animation.onRefresh();
     });
   }
 }

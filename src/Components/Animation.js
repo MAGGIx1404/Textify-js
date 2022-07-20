@@ -36,9 +36,9 @@ export default class Animation {
         });
       },
       {
-        threshold: 0.15,
         root: null,
-        rootMargin: "0px"
+        rootMargin: "0px",
+        threshold: 0.25
       }
     ).observe(this.target);
   }

@@ -40,7 +40,6 @@ export default class extends Animation {
     });
 
     this.options = Object.assign({}, DEFAULT, options);
-
     // number of time the animation will be repeated
     this.repeat = this.options.once;
 
@@ -60,6 +59,15 @@ export default class extends Animation {
 
     each(this.lines, (line, lineIndex) => {
       each(line, (word) => {
+        word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
+          this.options.duration - 0.1
+        }s ${lineIndex * this.options.delay}s ${this.options.fadeEasing}`;
+        word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
+        this.options.fade ? (word.style.opacity = "1") : null;
+      });
+    });
+    this.lines.forEach((line, lineIndex) => {
+      line.forEach((word) => {
         word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
           this.options.duration - 0.1
         }s ${lineIndex * this.options.delay}s ${this.options.fadeEasing}`;

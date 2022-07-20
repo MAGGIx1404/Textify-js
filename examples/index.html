@@ -87,6 +87,8 @@
         aperiam laudantium magnam tempora enim? Ex qui sapiente doloremque? Et minus dolores soluta possimus blanditiis
         illo at rem quisquam est eius.
     </p>
+    <button class="show">show</button>
+    <button class="hide">hide</button>
     <script src="../dist/Textify.min.js"></script>
     <script>
         const textify = new Textify({
@@ -94,11 +96,16 @@
             easing: "back",
             rotation: "10",
             once: false,
-            scale: 0
+            scale: 0,
+            offset: 0.9
         });
-        console.log(textify);
-        window.addEventListener("textify.animateOut", () => {
-            console.log("textify");
+        const show = document.querySelector(".show");
+        const hide = document.querySelector(".hide");
+        show.addEventListener("click", () => {
+            textify.show();
+        });
+        hide.addEventListener("click", () => {
+            textify.hide();
         });
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/textify.js@1.1.0/dist/Textify.min.js" defer></script> -->
