@@ -1,8 +1,7 @@
 <div align="center">
   <h1>
     <img width="600" src="./logo.png" alt="">
-    <br>
-    Ukiyo.js</h1>
+  </h1>
   <p>.................................................................</p>
   <p>
     <img src="https://img.shields.io/bundlephobia/minzip/ukiyojs">
