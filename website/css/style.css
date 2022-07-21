@@ -1,3 +1,5 @@
+@import url("https://rsms.me/inter/inter.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,16 +15,8 @@ html {
   font-size: calc(100vw / 1920 * 10);
 }
 
-@font-face {
-  font-family: "SigmarOne";
-  src: url("../fonts/SigmarOne.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-
 body {
-  font-family: "SigmarOne", sans-serif;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
   background-color: rgba(15, 23, 42, 1);
   color: rgba(148, 163, 184, 1);
@@ -115,13 +109,13 @@ body {
 /* title */
 
 .title {
-  font-size: 6rem;
+  font-size: 8rem;
   line-height: 1;
 }
 
 .paragraph {
-  font-size: 2rem;
-  font-weight: lighter;
+  font-size: 2.4rem;
+  font-weight: 200;
   line-height: 1.4;
   letter-spacing: 2px;
   margin-top: 4rem;
@@ -208,7 +202,7 @@ body {
 
 .nav .nav-container a {
   font-size: 2rem;
-  font-weight: lighter;
+  font-weight: 500;
   background: #ff9900;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -218,4 +212,13 @@ body {
 .nav .nav-container a:hover {
   background: #ffffff;
   color: #ff9900;
+}
+
+.footer_content_wrapper {
+  padding: 24px 0;
+}
+
+.footer_text {
+  font-size: 1.8rem;
+  text-align: center;
 }
