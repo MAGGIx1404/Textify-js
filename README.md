@@ -4,7 +4,7 @@
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
   <p>
-    <a href="/" target="_blank">
+    <a href="https://maggix1404.github.io/Textify.js/" target="_blank">
     ⛰️<br>
     <b>DEMO</b></a>
   </p>
