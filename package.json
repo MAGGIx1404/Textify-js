@@ -1,6 +1,6 @@
 {
   "name": "textify.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simple scroll based text reveal animation library.",
   "main": "./dist/Textify.min.js",
   "module": "./src/index.js",
