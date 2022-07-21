@@ -63,6 +63,7 @@ new Textify()
 | scale | 1 | Add scaling on word in animation |
 | easing | Default | Set easing function for animation |
 | fadeEasing | Default | fade animation ease value |
+| selector | data-textify | css selector for selecting elements from DOM |
 
 # API
 Textify object exposed following methods.
