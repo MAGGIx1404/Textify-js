@@ -4,6 +4,10 @@
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
   <p>
+    <img src="https://img.shields.io/github/tag/MAGGIx1404/Textify.js?include_prereleases=&sort=semver&color=blue">
+    <img src="https://img.shields.io/badge/License-MIT-blue">
+  </p>
+  <p>
     <a href="https://maggix1404.github.io/Textify.js/" target="_blank">
     ⛰️<br>
     <b>DEMO</b></a>
@@ -99,3 +103,8 @@ document.getElementById("btn", () => {
 * circIn
 * circOut
 * circInOut
+
+
+## License
+
+Released under [MIT](/LICENSE) by [@MAGGIx1404](https://github.com/MAGGIx1404).
