@@ -1,8 +1,8 @@
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  devtool: "source-map",
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -10,8 +10,10 @@ module.exports = {
     clean: true,
     library: {
       name: "Textify.js",
-      type: "umd"
+      type: "umd",
+      export: "default"
     },
+    globalObject: "this",
     environment: {
       arrowFunction: false
     }
@@ -29,6 +31,17 @@ module.exports = {
           }
         }
       }
+    ]
+  },
+  plugins: [],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        extractComments: "all",
+        minify: TerserPlugin.uglifyJsMinify
+      })
     ]
   }
 };

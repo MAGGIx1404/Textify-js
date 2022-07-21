@@ -2,8 +2,8 @@ import { getEasing } from "./easing";
 
 // -------------------------------------------------------------------------------
 export const DEFAULT = {
-  duration: 1.45,
-  delay: 0.1,
+  duration: 1450,
+  delay: 100,
   fade: false,
   top: false,
   once: true,

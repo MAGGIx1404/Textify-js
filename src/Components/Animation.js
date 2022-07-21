@@ -38,7 +38,7 @@ export default class Animation {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.25
+        threshold: 0
       }
     ).observe(this.target);
   }

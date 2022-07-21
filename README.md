@@ -2,7 +2,7 @@
   <h1>
     <img width="600" src="./logo.png" alt="">
   </h1>
-  <p>.................................................................</p>
+  <p>Minimal</p>
   <p>
     <img src="https://img.shields.io/bundlephobia/minzip/ukiyojs">
     <img src="https://img.shields.io/github/license/yitengjun/ukiyojs">

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Textify.js</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" target="_blank" class="btn">Github</a>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="scroll__container">
+            <div class="section-1 section">
+                <h1 class="big__title">
+                    <span>T</span>
+                    <span>E</span>
+                    <span>X</span>
+                    <span>T</span>
+                    <span>I</span>
+                    <span>F</span>
+                    <span>Y</span>
+                    <span>.</span>
+                    <span>J</span>
+                    <span>S</span>
+                </h1>
+            </div>
+            <div class="section-2 section">
+                <div class="container">
+                    <figure class="pic-container">
+                        <img class="images" src="./images/1.png" alt="error">
+                    </figure>
+                    <div class="content">
+                        <h1 class="title p-1">Text Animations</h1>
+                        <p class="paragraph p-1">
+                            Textify.js is a simple library that allows you to create text animations. and user can
+                            modify the animation for themself.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-3 section">
+                <div class="container revert">
+                    <figure class="pic-container">
+                        <img class="images" src="./images/3.png" alt="error">
+                    </figure>
+                    <div class="content">
+                        <h1 class="title p-2">Scroll-base Animations</h1>
+                        <p class="paragraph p-2">
+                            Textify.js is a simple library that works with scroll-base animations. and user can use any
+                            scrolling libraries likes locomotive-scroll, smoothscroll, etc. all libraries are compatible
+                            with Textify.js.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-4 section">
+                <div class="container ">
+                    <figure class="pic-container">
+                        <img class="images" src="./images/4.png" alt="error">
+                    </figure>
+                    <div class="content">
+                        <h1 class="title p-3">Custom Animations</h1>
+                        <p class="paragraph p-3">
+                            Textify.js is a provide a simple way to create custom animations. textify give rotation,
+                            scale, translate and fade options to create your own animations. and other new options are
+                            add in future.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-5 section">
+                <div class="container revert">
+                    <figure class="pic-container">
+                        <img class="images" src="./images/5.png" alt="error">
+                    </figure>
+                    <div class="content">
+                        <h1 class="title p-4">Custom Eases</h1>
+                        <p class="paragraph p-4">
+                            Textify.js is a provide 20+ custom eases for animations. and currently user can't use their
+                            own eases. that will be add in future. currently these eases are use to create animations
+                            and fade animations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-6 section">
+                <div class="container">
+                    <figure class="pic-container">
+                        <img class="images" src="./images/6.png" alt="error">
+                    </figure>
+                    <div class="content">
+                        <h1 class="title p-5">About Textify</h1>
+                        <p class="paragraph p-5">
+                            Textify.js is under development. and we are working on new features. and we are happy to see
+                            you in our future. please give us feedbacks. for any questions or suggestions. Thank you.
+                        </p>
+                        <div class="btns__container">
+                            <a href="https://github.com/MAGGIx1404/Textify.js" class="btn btn-1">Documentation</a>
+                            <a href="https://github.com/MAGGIx1404/Textify.js" class="btn btn-2">Download</a>
+                        </div>
+                        <p class="para">
+                            <span>credits:</span> <br />
+                            author: <a href="https://github.com/MAGGIx1404" target="_blank"> MAGGIx1404 </a> <br />
+                            images by: <a href="https://www.freepik.com/" target="_blank">freepik.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="../dist/Textify.min.js"></script>
+    <script>
+        const section1 = new Textify({
+            selector: ".p-1",
+            once: false,
+            scale: 0,
+            rotation: 20,
+            easing: "back",
+            fade: true,
+            duration: 1000
+        });
+
+        const section2 = new Textify({
+            selector: ".p-2",
+            once: false,
+            top: true,
+            scale: 0,
+            rotation: -10,
+            easing: "elasticInOut",
+            fade: true,
+            duration: 1000
+        });
+
+        const section3 = new Textify({
+            selector: ".p-3",
+            once: false,
+            top: true,
+            rotation: -10,
+            easing: "bounceInOut",
+            fade: true,
+            duration: 1000
+        });
+
+        const section4 = new Textify({
+            selector: ".p-4",
+            once: false,
+            rotation: 10,
+            easing: "circInOut",
+            fade: true,
+            duration: 1000
+        });
+
+        const section5 = new Textify({
+            selector: ".p-5",
+            once: false,
+            easing: "circInOut",
+            fade: true,
+            duration: 1000
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                    entry.target.classList.remove("active");
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: "0px",
+            root: null
+        });
+        const images = document.querySelectorAll(".images");
+        images.forEach(image => {
+            observer.observe(image);
+        });
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/textify.js@1.1.0/dist/Textify.min.js" defer></script> -->
+    <!-- <script src="./app.js"></script> -->
+</body>
+
+</html>

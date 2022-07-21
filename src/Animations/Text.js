@@ -1,6 +1,3 @@
-import each from "lodash/each";
-
-// -------------------------------------------------------------------------------
 import Animation from "../Components/Animation";
 
 // -------------------------------------------------------------------------------
@@ -25,7 +22,7 @@ export default class extends Animation {
     }
 
     if (paragraphs.length !== 0) {
-      each(paragraphs, (element) => {
+      paragraphs.forEach((element) => {
         split({ element });
         split({ element });
         lines.push(...element.querySelectorAll("span span"));
@@ -40,55 +37,64 @@ export default class extends Animation {
     });
 
     this.options = Object.assign({}, DEFAULT, options);
-    // number of time the animation will be repeated
     this.repeat = this.options.once;
-
-    /**
-     * on resize event
-     * */
     this.onResize();
+    if ("IntersectionObserver" in window) this.animateOut();
+  }
 
-    if ("IntersectionObserver" in window) {
-      this.animateOut();
-    }
+  addStyles(word, index) {
+    word.style.transition = `transform ${this.options.duration}ms ${index * this.options.delay}ms ${this.options.easing}, opacity ${
+      this.options.duration - 200
+    }ms ${index * this.options.delay}ms ${this.options.fadeEasing}`;
+    word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
+    this.options.fade ? (word.style.opacity = "1") : null;
   }
 
   // --------
   animateIn() {
     super.animateIn();
 
-    each(this.lines, (line, lineIndex) => {
-      each(line, (word) => {
-        word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
-          this.options.duration - 0.1
-        }s ${lineIndex * this.options.delay}s ${this.options.fadeEasing}`;
-        word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
-        this.options.fade ? (word.style.opacity = "1") : null;
+    if (typeof this.lines === "undefined") return;
+
+    if (typeof this.lines === "object") {
+      Object.keys(this.lines).forEach((key, index) => {
+        this.lines[key].forEach((word) => {
+          this.addStyles(word, index);
+        });
       });
-    });
-    this.lines.forEach((line, lineIndex) => {
-      line.forEach((word) => {
-        word.style.transition = `transform ${this.options.duration}s ${lineIndex * this.options.delay}s ${this.options.easing}, opacity ${
-          this.options.duration - 0.1
-        }s ${lineIndex * this.options.delay}s ${this.options.fadeEasing}`;
-        word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
-        this.options.fade ? (word.style.opacity = "1") : null;
+    } else {
+      this.lines.forEach((line, index) => {
+        line.forEach((word) => {
+          this.addStyles(word, index);
+        });
       });
-    });
+    }
   }
 
   // --------
   animateOut() {
     super.animateOut();
+    if (typeof this.lines === "undefined") return;
 
-    each(this.lines, (line) => {
-      each(line, (word) => {
-        word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}150%)  scale(${this.options.scale}) rotate(${
-          this.options.rotation
-        }deg)`;
-        this.options.fade ? (word.style.opacity = "0") : null;
+    if (typeof this.lines === "object") {
+      Object.keys(this.lines).forEach((key) => {
+        this.lines[key].forEach((word) => {
+          word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}150%)  scale(${this.options.scale}) rotate(${
+            this.options.rotation
+          }deg)`;
+          this.options.fade ? (word.style.opacity = "0") : null;
+        });
       });
-    });
+    } else {
+      this.lines.forEach((line) => {
+        line.forEach((word) => {
+          word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}150%)  scale(${this.options.scale}) rotate(${
+            this.options.rotation
+          }deg)`;
+          this.options.fade ? (word.style.opacity = "0") : null;
+        });
+      });
+    }
   }
 
   // --------

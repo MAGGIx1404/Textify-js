@@ -10,10 +10,23 @@ export default class Textify {
    * @param {object} options - Configuration object
    */
   constructor(options = {}) {
-    try {
-      options.easing = getEasing(options.easing);
-    } catch (err) {
-      throw new Error(err);
+    if (!options.easing) {
+      options.easing = getEasing("default");
+    } else {
+      try {
+        options.easing = getEasing(options.easing);
+      } catch (err) {
+        throw new Error(err);
+      }
+    }
+    if (!options.fadeEasing) {
+      options.fadeEasing = getEasing("default");
+    } else {
+      try {
+        options.fadeEasing = getEasing(options.fadeEasing);
+      } catch (err) {
+        throw new Error(err);
+      }
     }
 
     const controller = Object.assign({}, DEFAULT, options);

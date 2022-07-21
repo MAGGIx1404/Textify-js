@@ -22,6 +22,10 @@ const cssEasing = {
 };
 
 export const getEasing = (easing) => {
+  if (easing === "undefined") {
+    return cssEasing.default;
+  }
+
   if (easing && !cssEasing[easing]) {
     throw new Error(`Invalid Easing ${easing} option.`);
   }
