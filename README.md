@@ -81,7 +81,8 @@ Textify object exposed following methods.
 Example:
 ```javascript
 const textObj = new Textify();
-document.getElementById("btn", () => {
+
+document.getElementById("btn").addEventListener("click", () => {
     textObj.show();
 })
 ```
