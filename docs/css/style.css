@@ -240,6 +240,10 @@ body {
   text-align: center;
 }
 
+.footer_text a {
+  color: #3ad9f7;
+}
+
 /* info */
 .section-info {
   height: fit-content;
