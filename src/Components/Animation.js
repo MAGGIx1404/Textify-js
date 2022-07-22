@@ -1,4 +1,4 @@
-import Prefix from "prefix";
+import Prefix from "../vendors/prefix";
 
 export default class Animation {
   constructor({ element, elements }) {
