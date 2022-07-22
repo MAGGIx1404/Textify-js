@@ -1,14 +1,14 @@
 @import url("https://rsms.me/inter/inter.css");
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
   color: #ffffff;
+  text-decoration: none;
 }
 
 html {
@@ -28,54 +28,54 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
   background-color: rgba(15, 23, 42, 1);
   color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 /* container */
 
 .container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  margin: 0 auto;
   max-width: 90%;
   width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .container .pic-container {
-  width: 100%;
-  height: 100%;
-  max-width: 50%;
-  flex: 0 0 50%;
-  display: flex;
   align-items: center;
+  display: flex;
+  flex: 0 0 50%;
+  height: 100%;
   justify-content: center;
+  max-width: 50%;
+  width: 100%;
 }
 
 .container .content {
-  width: 100%;
-  height: 100vh;
-  flex: 0 0 50%;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  flex: 0 0 50%;
+  height: 100vh;
   justify-content: center;
   padding: 0 4%;
+  width: 100%;
 }
 
 .container .pic-container img {
-  width: 100%;
+
   height: fit-content;
   object-fit: cover;
-  transition: all 1s ease;
   opacity: 0;
-
   transform-origin: center;
   transform: scale(0);
+  transition: all 1s ease;
+  width: 100%;
 }
 
 .container .pic-container img.active {
@@ -90,13 +90,13 @@ body {
 /* sections */
 
 .section {
-  width: 100%;
+  animation: rotation 100s linear infinite alternate-reverse;
+  background-clip: border-box;
+  background: url(../images/bg-1.png) repeat center center;
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  background: url(../images/bg-1.png) repeat center center;
-  background-clip: border-box;
-  animation: rotation 100s linear infinite alternate-reverse;
+  width: 100%;
 }
 
 @keyframes rotation {
@@ -114,18 +114,18 @@ body {
 }
 
 .big__title {
+  color: #fff;
   font-size: 18rem;
   font-weight: lighter;
-  color: #fff;
   letter-spacing: -1.5rem;
 }
 
 .big__title span {
+  cursor: pointer;
   display: inline-block;
   line-height: 1;
   transform-origin: center;
   transition: all 0.5s ease;
-  cursor: pointer;
 }
 
 .big__title span:nth-of-type(odd):hover {
@@ -146,23 +146,23 @@ body {
 .paragraph {
   font-size: 2.4rem;
   font-weight: 400;
-  line-height: 1.4;
   letter-spacing: 2px;
+  line-height: 1.4;
   margin-top: 4rem;
 }
 
 .btns__container {
   display: flex;
-  justify-content: space-between;
-  width: fit-content;
-  margin-top: 4rem;
   gap: 3rem;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: fit-content;
 }
 
 .btns__container a {
+  border-radius: 50px;
   font-size: 2.4rem;
   padding: 2rem 3rem;
-  border-radius: 50px;
   transition: all 0.5s ease;
 }
 
@@ -188,12 +188,12 @@ body {
 
 /* btn start */
 .btn {
+  background: #ff9900;
+  border-radius: 50px;
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
   padding: 0.75em 1em;
-  border-radius: 50px;
-  background: #ff9900;
   transition: all 0.5s ease;
 }
 
@@ -206,10 +206,10 @@ body {
 /* para */
 
 .para {
-  margin-top: 10rem;
   font-size: 2rem;
-  width: 100%;
   line-height: 3;
+  margin-top: 10rem;
+  width: 100%;
 }
 
 .para span {
@@ -217,36 +217,36 @@ body {
 }
 
 .para a {
-  padding: 0.8rem 2rem;
-  border-radius: 50px;
   background: #ff9900;
+  border-radius: 50px;
   margin-left: 1rem;
+  padding: 0.8rem 2rem;
   transition: all 0.5s ease;
 }
 
 .para a:hover {
-  color: #ff9900;
   background: #ffffff;
+  color: #ff9900;
 }
 
 /* navigation bar */
 
 .nav {
-  width: 100%;
   height: fit-content;
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: 100;
 }
 
 .nav .nav-container {
-  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
   margin: 0 auto;
   max-width: 90%;
   padding: 3rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  width: 100%;
 }
 
 /* footer */
@@ -256,8 +256,8 @@ body {
 }
 
 .footer_text {
-  padding: 0.5rem 0;
   font-size: 1.5rem;
+  padding: 0.5rem 0;
   text-align: center;
 }
 
@@ -272,11 +272,11 @@ body {
 }
 
 .section-info .container-2 {
-  max-width: 80%;
-  width: 100%;
-  margin: 0 auto;
-  min-height: 100vh;
   height: fit-content;
+  margin: 0 auto;
+  max-width: 80%;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .section-info .container-2 h1 {
@@ -285,39 +285,39 @@ body {
 }
 
 .section-info .container-2 h1.lite {
-  font-weight: 300;
   font-size: 2.5rem;
+  font-weight: 300;
   margin-top: 2rem;
 }
 
 .line {
-  width: 100%;
-  height: 2px;
   background-color: #ff9900;
+  height: 2px;
   margin: 4rem 0;
+  width: 100%;
 }
 
 .section-info .container-2 .btns_wrapper {
-  width: 100%;
-  padding: 4rem 0 0 0;
   display: flex;
   gap: 2rem;
+  padding: 4rem 0 0 0;
+  width: 100%;
 }
 
 pre {
+  background: rgba(255, 255, 255, 0.1);
+  height: fit-content;
+  margin: 3rem 0;
+  padding: 3rem 3rem;
   white-space: normal;
   width: 100%;
-  height: fit-content;
-  padding: 3rem 3rem;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 3rem 0;
 }
 
 pre code {
-  width: 100%;
-  height: fit-content;
   font-size: 1.6rem;
   font-weight: 400;
+  height: fit-content;
+  width: 100%;
 }
 
 pre code span {
@@ -326,29 +326,29 @@ pre code span {
 
 /* row wrapper */
 .row-wrapper {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
-  width: 100%;
   padding: 10vh 0;
+  width: 100%;
 }
 
 .row-wrapper .pic,
 .row-wrapper .text-content {
   flex: 0 0 50%;
+  height: fit-content;
   max-width: 50%;
   width: 100%;
-  height: fit-content;
 }
 
 .row-wrapper .pic img {
-  width: 100%;
   height: fit-content;
   object-fit: cover;
-  transition: all 1s ease;
   opacity: 0;
   transform-origin: center;
   transform: scale(0);
+  transition: all 1s ease;
+  width: 100%;
 }
 
 .row-wrapper .pic img.active {
@@ -357,8 +357,8 @@ pre code span {
 }
 
 .row-wrapper .text-content h1 {
-  font-weight: 800;
   color: #ff9900;
+  font-weight: 800;
 }
 
 .row-wrapper .text-content p {
