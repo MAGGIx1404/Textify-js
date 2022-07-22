@@ -6,6 +6,9 @@
   <p>
     <img src="https://img.shields.io/github/tag/MAGGIx1404/Textify.js?include_prereleases=&sort=semver&color=orange">
     <img src="https://img.shields.io/badge/License-MIT-orange">
+    <img src="https://img.shields.io/badge/maintained-yes-blue" alt="maintained - yes">
+    <a href="/CONTRIBUTING.md" title="Go to contributions doc"><img src="https://img.shields.io/badge/contributions-welcome-blue" alt="contributions - welcome"></a>
+    <a href="https://www.javascript.com/" title="Go to JavaScript homepage"><img src="https://img.shields.io/badge/Made_with-JavaScript-blue?logo=javascript&logoColor=white" alt="Made with JavaScript"></a>
   </p>
   <p>
     <a href="https://maggix1404.github.io/Textify.js/" target="_blank">
