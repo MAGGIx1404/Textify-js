@@ -191,7 +191,7 @@ body {
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
-  padding: .75em 1em;
+  padding: 0.75em 1em;
   border-radius: 50px;
   background: #ff9900;
   transition: all 0.5s ease;
@@ -304,7 +304,6 @@ body {
   gap: 2rem;
 }
 
-
 pre {
   white-space: normal;
   width: 100%;
@@ -365,6 +364,130 @@ pre code span {
 .row-wrapper .text-content p {
   font-weight: 400;
   width: 100%;
+}
+
+/* media query */
+
+@media only screen and (max-width: 1024px) {
+  .big__title {
+    font-size: 10rem;
+    letter-spacing: -8px;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .section-2,
+  .section-3,
+  .section-4 {
+    height: 80vh;
+  }
+
+  .section-info .container-2 h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container .pic-container {
+    max-width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .big__title {
+    font-size: 7rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .section-2,
+  .section-3,
+  .section-4 {
+    height: fit-content;
+  }
+
+  .container .content {
+    flex: 0;
+  }
+
+  .section-info {
+    margin-top: 5rem;
+  }
+
+  pre {
+    padding: 2rem 2rem;
+  }
+
+  pre code {
+    font-size: 1.2rem;
+  }
+
+  .row-wrapper {
+    flex-direction: column;
+  }
+
+  .row-wrapper .pic,
+  .row-wrapper .text-content {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .big__title {
+    font-size: 9rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .paragraph {
+    font-size: 1.7rem;
+    margin-top: 3.5rem;
+  }
+
+  pre code {
+    font-size: 1.33rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .big__title {
+    font-size: 10rem;
+  }
+
+  .title {
+    font-size: 6rem;
+  }
+
+  .paragraph {
+    font-size: 2.3rem;
+  }
+
+  .section-info .container-2 h1 {
+    font-size: 2.5rem;
+  }
+
+  pre code {
+    font-size: 1.34rem;
+  }
 }
 
 /* media query end */
