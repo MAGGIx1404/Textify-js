@@ -15,6 +15,18 @@ html {
   font-size: calc(100vw / 1920 * 10);
 }
 
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: calc(100vw / 1024 * 10);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: calc(100vw / 750 * 10);
+  }
+}
+
 body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
