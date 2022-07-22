@@ -19,7 +19,7 @@ body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
   background-color: rgba(15, 23, 42, 1);
-  color: rgba(148, 163, 184, 1);
+  color: #ffffff;
 }
 
 .container {
@@ -59,10 +59,14 @@ body {
   object-fit: cover;
   transition: all 1s ease;
   opacity: 0;
+
+  transform-origin: center;
+  transform: scale(0);
 }
 
 .container .pic-container img.active {
   opacity: 1;
+  transform: scale(1);
 }
 
 .revert {
@@ -76,6 +80,18 @@ body {
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
+  background: url(../images/bg-1.png) repeat center center;
+  background-clip: border-box;
+  animation: rotation 100s linear infinite alternate-reverse;
+}
+
+@keyframes rotation {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1000%;
+  }
 }
 
 .section-1 {
@@ -115,7 +131,7 @@ body {
 
 .paragraph {
   font-size: 2.4rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.4;
   letter-spacing: 2px;
   margin-top: 4rem;
@@ -219,6 +235,120 @@ body {
 }
 
 .footer_text {
-  font-size: 1.8rem;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
   text-align: center;
+}
+
+/* info */
+.section-info {
+  height: fit-content;
+  max-height: fit-content;
+}
+
+.section-info .container-2 {
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: fit-content;
+}
+
+.section-info .container-2 h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.section-info .container-2 h1.lite {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #ff9900;
+  margin: 4rem 0;
+}
+
+.section-info .container-2 .btns_wrapper {
+  width: 100%;
+  padding: 4rem 0 0 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.section-info .container-2 .btns_wrapper a {
+  font-size: 2rem;
+  padding: 2rem 3rem;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+  background: #ff9900;
+}
+
+.section-info .container-2 .btns_wrapper a:hover {
+  background: #ffffff;
+  color: #ff9900;
+}
+
+pre {
+  white-space: normal;
+  width: 100%;
+  height: fit-content;
+  padding: 3rem 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 3rem 0;
+}
+
+pre code {
+  width: 100%;
+  height: fit-content;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+pre code span {
+  color: #3ad9f7;
+}
+
+.row-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10vh 0;
+}
+
+.row-wrapper .pic,
+.row-wrapper .text-content {
+  flex: 0 0 50%;
+  max-width: 50%;
+  width: 100%;
+  height: fit-content;
+}
+
+.row-wrapper .pic img {
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+  transition: all 1s ease;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0);
+}
+
+.row-wrapper .pic img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.row-wrapper .text-content h1 {
+  font-weight: 800;
+  color: #ff9900;
+}
+
+.row-wrapper .text-content p {
+  font-weight: 400;
+  width: 100%;
 }

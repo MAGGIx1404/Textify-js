@@ -93,15 +93,102 @@
                     </div>
                 </div>
             </div>
+            <div class="section-info section">
+                <div class="container-2">
+                    <h1 class="mini-title">GET IT</h1>
+                    <div class="btns_wrapper">
+                        <a href="#" class="btn">Download</a>
+                        <a href="#" class="btn">Github</a>
+                    </div>
+                    <div class="line"></div>
+                    <h1 class="mini-title">INSTALL USING YARN & NPM</h1>
+                    <pre>
+                        <code class="code-plate">
+                            <span>yarn</span> add textify.js --save
+                        </code>
+                    </pre>
+                    <pre>
+                        <code class="code-plate">
+                            <span>npm</span> install textify.js --save
+                        </code>
+                    </pre>
+                    <div class="line"></div>
+                    <h1 class="mini-title">CDN SOURCES</h1>
+                    <h1 class="mini-title lite">JS</h1>
+                    <pre class="code-plate">
+                        <code>
+                            <span>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/textify.js@1.2.0/dist/Textify.min.js&quot;</span>&gt;&lt;/script&gt;
+                        </code>
+                    </pre>
+                    <div class="line"></div>
+                    <h1 class="mini-title">INITIALIZE TEXTIFY</h1>
+                    <pre class="code-plate">
+                        <code>
+                            <span>const</span> textify = new <span>Textify</span>();</code>
+                    </pre>
+                    <!-- examples -->
+                    <div class="line"></div>
+                    <h1 class="mini-title">EXAMPLES</h1>
+                    <div class="row-wrapper">
+                        <figure class="pic">
+                            <img src="./images/code-1.png" class="images" alt="error">
+                        </figure>
+                        <div class="text-content">
+                            <h1 class="mini-title lite test-1">Output</h1>
+                            <p class="paragraph test-1">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, molestiae sequi ea eius
+                                consectetur impedit sunt, et enim eaque eum necessitatibus optio delectus. Reprehenderit
+                                necessitatibus rem ab corporis alias et impedit. Nihil sunt consectetur mollitia
+                                pariatur impedit doloremque labore itaque libero, corporis corrupti vitae numquam
+                                sapiente est harum tempora quae.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-wrapper revert">
+                        <figure class="pic">
+                            <img src="./images/code-2.png" class="images" alt="error">
+                        </figure>
+                        <div class="text-content">
+                            <h1 class="mini-title lite test-2">Output</h1>
+                            <p class="paragraph test-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, molestiae sequi ea eius
+                                consectetur impedit sunt, et enim eaque eum necessitatibus optio delectus. Reprehenderit
+                                necessitatibus rem ab corporis alias et impedit. Nihil sunt consectetur mollitia
+                                pariatur impedit doloremque labore itaque libero, corporis corrupti vitae numquam
+                                sapiente est harum tempora quae.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-wrapper">
+                        <figure class="pic">
+                            <img src="./images/code-3.png" class="images" alt="error">
+                        </figure>
+                        <div class="text-content">
+                            <h1 class="mini-title lite test-3">Output</h1>
+                            <p class="paragraph test-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, molestiae sequi ea eius
+                                consectetur impedit sunt, et enim eaque eum necessitatibus optio delectus. Reprehenderit
+                                necessitatibus rem ab corporis alias et impedit. Nihil sunt consectetur mollitia
+                                pariatur impedit doloremque labore itaque libero, corporis corrupti vitae numquam
+                                sapiente est harum tempora quae.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="section-6">
                 <div class="footer_content_wrapper">
+                    <div class="line"></div>
+                    <p class="footer_text">Released under the <a
+                            href="https://github.com/MAGGIx1404/Textify.js/blob/master/LICENSE" target="_blank"
+                            class="profile_link">MIT
+                            License.</a></p>
                     <p class="footer_text">Created with ❤️ by <a class="profile_link"
-                            href="https://github.com/MAGGIx1404" target="_blank">Jeet</a></p>
+                            href="https://github.com/MAGGIx1404" target="_blank">MAGGIx1404</a></p>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/textify.js@1.2.1/dist/Textify.min.js"></script>
     <script>
         const section1 = new Textify({
@@ -169,6 +256,36 @@
         images.forEach(image => {
             observer.observe(image);
         });
+        // tests
+        const textOne = new Textify({
+            selector: ".test-1",
+            once: false,
+            rotation: 20,
+            ease: "circInOut",
+            fade: true
+        })
+
+        const textTwo = new Textify({
+            selector: ".test-2",
+            once: false,
+            top: true,
+            scale: 0,
+            rotation: -20,
+            ease: "back",
+            fade: true
+        })
+
+        const testThree = new Textify({
+            selector: ".test-3",
+            once: false,
+            top: false,
+            scale: 2,
+            rotation: 20,
+            easing: "circInOut",
+            fade: true,
+            duration: 1000,
+            delay: 100
+        })
     </script>
 </body>
 
