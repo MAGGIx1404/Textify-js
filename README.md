@@ -85,6 +85,15 @@ const textObj = new Textify();
 document.getElementById("btn").addEventListener("click", () => {
     textObj.show();
 })
+
+document.getElementById("btn").addEventListener("click", () => {
+    textObj.show();
+})
+
+window.addEventListener("load", () => {
+    textObj.onRefresh();
+});
+
 ```
 
 # Easing functions
