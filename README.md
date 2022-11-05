@@ -117,7 +117,7 @@ window.addEventListener("load", () => {
 * circOut
 * circInOut
 
-##Who's using Textify.js?
+# Who's using Textify.js?
 - [Travlrid.com](http://www.travlrid.com/)
 - [wyrd.dev](https://wyrd.dev/)
 - [jeetramoliya.tech](https://www.jeetramoliya.tech/)
