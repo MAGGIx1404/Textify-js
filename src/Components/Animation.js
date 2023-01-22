@@ -14,6 +14,8 @@ export default class Animation {
 
     this.isVisible = false;
 
+    this.threshold = 0.5;
+
     if ("IntersectionObserver" in window) {
       this.createObserver();
 
@@ -38,7 +40,7 @@ export default class Animation {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0
+        threshold: this.threshold
       }
     ).observe(this.target);
   }
