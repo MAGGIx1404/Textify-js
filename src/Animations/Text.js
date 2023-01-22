@@ -38,6 +38,9 @@ export default class extends Animation {
 
     this.options = Object.assign({}, DEFAULT, options);
     this.repeat = this.options.once;
+
+    this.threshold = this.options.threshold;
+
     this.onResize();
     if ("IntersectionObserver" in window) this.animateOut();
   }
@@ -46,7 +49,6 @@ export default class extends Animation {
     word.style.transition = `transform ${this.options.duration}ms ${index * this.options.delay}ms ${this.options.easing}, opacity ${
       this.options.duration - 200
     }ms ${index * this.options.delay}ms ${this.options.fadeEasing}`;
-    console.log(this.transformPrefix);
     word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
     this.options.fade ? (word.style.opacity = "1") : null;
   }

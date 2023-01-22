@@ -1,0 +1,23 @@
+.textify-title .word,
+.textify-title .char {
+  display: inline-block;
+}
+
+.textify-title .char {
+  position: relative;
+}
+
+.textify-title .char::before,
+.textify-title .char::after {
+  content: attr(data-char);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: inherit;
+  user-select: none;
+}
+
+.textify-title .word {
+  overflow: hidden;
+}
