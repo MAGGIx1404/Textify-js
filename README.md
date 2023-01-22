@@ -36,7 +36,7 @@ yarn add textify.js
 
 ## Using CDN:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/textify.js@1.2.2/dist/Textify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/textify.js@2.2.2/dist/Textify.min.js"></script>
 ```
 
 ## Usage
@@ -87,7 +87,7 @@ document.getElementById("btn").addEventListener("click", () => {
 })
 
 document.getElementById("btn").addEventListener("click", () => {
-    textObj.show();
+    textObj.hide();
 })
 
 window.addEventListener("load", () => {
@@ -121,6 +121,7 @@ window.addEventListener("load", () => {
 - [Travlrid.com](http://www.travlrid.com/)
 - [wyrd.dev](https://wyrd.dev/)
 - [jeetramoliya.tech](https://www.jeetramoliya.tech/)
+- [Sleek_Ultra_Slim] (https://sleekultraslim.com.au/)
 
 
 ## License
