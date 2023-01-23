@@ -4,6 +4,7 @@
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
   <p>
+    <img src="https://data.jsdelivr.com/v1/package/npm/textify.js/badge?style=rounded">
     <img src="https://img.shields.io/npm/v/textify.js?color=orange&label=version">
     <img src="https://img.shields.io/badge/License-MIT-orange">
     <img src="https://img.shields.io/badge/maintained-yes-orange" alt="maintained - yes">
