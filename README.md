@@ -4,7 +4,7 @@
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
   <p>
-    <img src="https://img.shields.io/github/tag/MAGGIx1404/Textify.js?include_prereleases=&sort=semver&color=orange">
+    <img src="https://img.shields.io/npm/v/textify.js?color=orange&label=version">
     <img src="https://img.shields.io/badge/License-MIT-orange">
     <img src="https://img.shields.io/badge/maintained-yes-orange" alt="maintained - yes">
     <a href="/CONTRIBUTING.md" title="Go to contributions doc"><img src="https://img.shields.io/badge/contributions-welcome-orange" alt="contributions - welcome"></a>
