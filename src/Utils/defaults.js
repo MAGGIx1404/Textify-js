@@ -19,10 +19,13 @@ export const DEFAULT_TITLE = {
   delay: 50,
   fade: false,
   top: false,
+  reveal: true,
   once: true,
   rotation: 0,
   scale: 1,
   easing: getEasing("default"),
+  fadeDuration: 1000,
   fadeEasing: getEasing("default"),
-  threshold: 0.5
+  threshold: 0.5,
+  transformOrigin: "center center"
 };

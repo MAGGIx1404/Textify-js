@@ -126,6 +126,11 @@ h1.big-title {
   line-height: 1;
 }
 
+h1.text-title .word .char {
+  font-size: 15rem;
+  line-height: 1;
+}
+
 p.paragraph {
   font-size: 2rem;
   width: 50%;
@@ -183,6 +188,20 @@ p.paragraph {
   border-radius: 50%;
   bottom: 10vh;
   right: 10vw;
+}
+
+.sec-3 .shape2 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #000000;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .sec-4 .container {
@@ -273,5 +292,56 @@ footer .container {
 }
 
 footer a {
+  font-size: 2rem;
+}
+
+/* demo */
+.demo-banner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.end {
+  align-items: flex-end !important;
+  text-align: right;
+}
+
+.text-box {
+  padding: 20rem 0;
+}
+
+.text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.text-container p {
+  margin-top: 4rem;
+}
+
+.side-title {
+  transform-origin: center;
+  width: 100%;
+  height: auto;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: difference;
+  z-index: 999;
+  padding: 4rem 2.5vw;
+}
+
+nav a {
   font-size: 2rem;
 }
