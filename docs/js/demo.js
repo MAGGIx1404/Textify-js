@@ -32,7 +32,7 @@ lenis.on("scroll", ({ scroll }) => {
 });
 
 // text animation-1
-const title1 = new TextifyTitle({
+new TextifyTitle({
   selector: ".title-1",
   duration: 800,
   delay: 50,
@@ -40,14 +40,14 @@ const title1 = new TextifyTitle({
   threshold: 0
 });
 
-const text1 = new Textify({
+new Textify({
   selector: ".p-1",
   duration: 1000,
   once: false
 });
 
 // text animation-2
-const title2 = new TextifyTitle({
+new TextifyTitle({
   selector: ".title-2",
   duration: 500,
   delay: 100,
@@ -59,7 +59,7 @@ const title2 = new TextifyTitle({
   ease: "bounceInOut"
 });
 
-const text2 = new Textify({
+new Textify({
   selector: ".p-2",
   duration: 1000,
   once: false,
@@ -68,7 +68,7 @@ const text2 = new Textify({
 });
 
 // text animation-3
-const title3 = new TextifyTitle({
+new TextifyTitle({
   selector: ".title-3",
   duration: 1000,
   delay: 50,
@@ -78,7 +78,7 @@ const title3 = new TextifyTitle({
   fade: true
 });
 
-const text3 = new Textify({
+new Textify({
   selector: ".p-3",
   duration: 1000,
   once: false,
@@ -88,13 +88,13 @@ const text3 = new Textify({
   ease: "bounceIn"
 });
 
-const text4 = new Textify({
+new Textify({
   selector: ".t-5",
   duration: 1000,
   once: false
 });
 
-const scrollTitle = new TextifyTitle({
+new TextifyTitle({
   selector: ".scroll-title",
   duration: 1000,
   delay: 50,

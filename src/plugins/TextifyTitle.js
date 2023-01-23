@@ -1,21 +1,12 @@
 // -------------------------------------------------------------------------------
-import "../style/Textify.css";
+import { Title } from "../Animations";
+
+// -------------------------------------------------------------------------------
+import { mapEach, DEFAULT_TITLE, getEasing } from "../Utils";
 
 // -------------------------------------------------------------------------------
 
-import { Text } from "./Animations";
-
-// -------------------------------------------------------------------------------
-
-import { mapEach, DEFAULT, getEasing } from "./Utils";
-import { TextifyTitle } from "./plugins";
-
-// -------------------------------------------------------------------------------
-class Textify {
-  /**
-   * @constructor
-   * @param {object} options - Configuration object
-   */
+class TextifyTitle {
   constructor(options = {}) {
     if (!options.easing) {
       options.easing = getEasing("default");
@@ -36,29 +27,17 @@ class Textify {
       }
     }
 
-    const controller = Object.assign({}, DEFAULT, options);
+    const controller = Object.assign({}, DEFAULT_TITLE, options);
 
-    const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify]";
+    const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify-title]";
     this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
 
     this.animations = mapEach(this.elements, (element) => {
-      return new Text({
+      return new Title({
         element,
         options: controller
       });
     });
-
-    this.elements.forEach((element) => {
-      const spans = element.querySelectorAll("span");
-      spans.forEach((span) => {
-        span.style.display = "inline-block";
-        span.style.overflow = "hidden";
-        span.style.verticalAlign = "top";
-        span.style.transformOrigin = "center";
-      });
-    });
-
-    this.events();
   }
 
   // --------
@@ -67,26 +46,28 @@ class Textify {
   }
 
   //   animations
+  //   --------
   show() {
     this.animations.forEach((animation) => {
       animation.animateIn();
     });
   }
 
+  //   --------
   hide() {
     this.animations.forEach((animation) => {
       animation.animateOut();
     });
   }
 
-  // --------
+  //   --------
   onResize() {
     this.animations.forEach((animation) => {
       animation.onResize && animation.onResize();
     });
   }
 
-  // --------
+  //   --------
   onRefresh() {
     this.animations.forEach((animation) => {
       animation.onRefresh && animation.onRefresh();
@@ -94,9 +75,4 @@ class Textify {
   }
 }
 
-// -------------------------------------------------------------------------------
-
-export default { Textify, TextifyTitle };
-
-window.Textify = Textify;
-window.TextifyTitle = TextifyTitle;
+export default TextifyTitle;

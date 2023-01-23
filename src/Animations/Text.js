@@ -1,11 +1,10 @@
-import Animation from "../Components/Animation";
+import { Animation } from "../Components";
 
 // -------------------------------------------------------------------------------
-import { calculate, split } from "../Utils/texts";
-import { DEFAULT } from "../Utils/defaults";
+import { calculate, split, DEFAULT } from "../Utils";
 
 // -------------------------------------------------------------------------------
-export default class extends Animation {
+export default class Text extends Animation {
   /**
    * @constructor
    * @param {HTMLElement} element - Target element

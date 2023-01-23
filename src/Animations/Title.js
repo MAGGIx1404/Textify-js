@@ -1,9 +1,11 @@
 // -------------------------------------------------------------------------------
-import Animation from "../Components/Animation";
+import { Animation } from "../Components";
 
 // -------------------------------------------------------------------------------
-import { calculate, split } from "../Utils/texts";
-import { DEFAULT_TITLE } from "../Utils/defaults";
+import { calculate, split, DEFAULT_TITLE } from "../Utils";
+
+// -------------------------------------------------------------------------------
+const titles = ["H1", "H2", "H3", "H4", "H5", "H6"];
 
 // -------------------------------------------------------------------------------
 export default class Title extends Animation {
@@ -17,15 +19,7 @@ export default class Title extends Animation {
     const chars = [];
     const texts = element.querySelectorAll("h1, h2, p");
 
-    if (
-      element.tagName === "H1" ||
-      element.tagName === "H2" ||
-      element.tagName === "H3" ||
-      element.tagName === "H4" ||
-      element.tagName === "H5" ||
-      element.tagName === "H6"
-    ) {
-      // -----------------------------------------------------------------------
+    if (titles.includes(element.tagName)) {
       if (texts.length === 0) {
         split({ element });
         const newWords = element.querySelectorAll("span");
@@ -35,7 +29,7 @@ export default class Title extends Animation {
         });
       }
 
-      // -----------------------------------------------------------------------
+      // ----------
       if (texts.length !== 0) {
         texts.forEach((element) => {
           split({ element });
@@ -47,7 +41,7 @@ export default class Title extends Animation {
         });
       }
 
-      // -----------------------------------------------------------------------
+      // ----------
       words.forEach((word) => {
         let newString = "";
         let itemText = word.innerText.split("");
@@ -57,18 +51,18 @@ export default class Title extends Animation {
         chars.push(...newChars);
       });
 
-      // -----------------------------------------------------------------------
+      // ----------
       chars.forEach((char, index) => {
         char.setAttribute("data-char-index", index + 1);
       });
 
-      // -----------------------------------------------------------------------
+      // ----------
       element.classList.add("textify-title");
     } else {
-      console.error("Textify.js: The target element must be a heading tag.");
+      throw new Error("Textify.js: The target element must be a heading tag.");
     }
 
-    // -----------------------------------------------------------------------
+    // ----------
     super({
       element,
       elements: {
@@ -77,36 +71,24 @@ export default class Title extends Animation {
       }
     });
 
-    // -----------------------------------------------------------------------
-    if (
-      element.tagName === "H1" ||
-      element.tagName === "H2" ||
-      element.tagName === "H3" ||
-      element.tagName === "H4" ||
-      element.tagName === "H5" ||
-      element.tagName === "H6"
-    ) {
-      null;
-    } else {
+    // ----------
+    if (!titles.includes(element.tagName)) {
       return;
     }
 
     this.options = Object.assign({}, DEFAULT_TITLE, options);
-
-    // -----------------------------------------------------------------------
-
     this.repeat = this.options.once;
     this.threshold = this.options.threshold;
-
     this.onResize();
+
+    // ----------
     if ("IntersectionObserver" in window) this.animateOut();
   }
 
-  //  ---------------------------------------------------------------------------
+  // ----------
   animateIn() {
     super.animateIn();
     if (typeof this.lines === "undefined") return;
-
     this.elements.chars.forEach((char, index) => {
       char.style.transition = `transform ${this.options.duration}ms ${index * this.options.delay}ms ${this.options.easing}, opacity ${
         this.options.fadeDuration
@@ -117,7 +99,7 @@ export default class Title extends Animation {
     });
   }
 
-  //   ---------------------------------------------------------------------------
+  // ----------
   animateOut() {
     super.animateOut();
     if (typeof this.lines === "undefined") return;
@@ -130,12 +112,12 @@ export default class Title extends Animation {
     });
   }
 
-  // --------
+  // ----------
   onResize() {
     this.lines = calculate(this.elements.words);
   }
 
-  // --------
+  // ----------
   onRefresh() {
     this.onResize();
   }

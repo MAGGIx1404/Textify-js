@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textify.js | Guide</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="guide">
+    <div class="side-bar">
+        <div class="side-bar-inner">
+            <img src="../logo-mini.png" alt="error">
+            <ul class="side-list">
+                <li class="side-list-item big">
+                    <a href="#" class="link">
+                        What is Textify js?
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Getting Started
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Basic Usage
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        [data-textify] Attribute
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Options
+                    </a>
+                </li>
+                <li class="side-list-item big">
+                    <a href="#" class="link">
+                        Installation
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Using NPM
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Using CDN
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Using ESM
+                    </a>
+                </li>
+                <li class="side-list-item big">
+                    <a href="#" class="link">
+                        Instance methods
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        show()
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        hide()
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        onRefresh()
+                    </a>
+                </li>
+                <li class="side-list-item big">
+                    <a href="#" class="link">
+                        PLUGINS
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        TextifyTitle()
+                    </a>
+                </li>
+                <li class="side-list-item big">
+                    <a href="#" class="link">
+                        Extra
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Custom Ease
+                    </a>
+                </li>
+                <li class="side-list-item">
+                    <a href="#" class="link">
+                        Examples
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="guide-wrapper g-1">
+        <div class="guide-container">
+            <img src="../logo.png" alt="errror" class="banner-img">
+        </div>
+    </div>
+    <div class="guide-wrapper g-2">
+        <div class="guide-container">
+            <h1 class="little-title">
+                What is Textify js?
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify.js is a open-source library that allows you to create text animations, and user can modify the
+                animation for themself. check out the documentation for more information. Textify.js is a simple library
+                that works with scroll-base animations, and user can use any scrolling libraries likes
+                locomotive-scroll, smoothscroll, etc. All libraries are compatible with Textify.js. Textify.js is a
+                provide 20+ custom eases for create animations and fade animations.
+            </p>
+        </div>
+    </div>
+    <div class="guide-wrapper g-3">
+        <div class="guide-container">
+            <h1 class="small-title">
+                Getting Started
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Start playing around with your own Textify demo on CodePen with this template that includes all of the
+                essentials!
+            </p>
+            <a href="#" class="btn">
+                Open Template on CodePen ↠
+            </a>
+        </div>
+    </div>
+    <div class="guide-wrapper g-4">
+        <div class="guide-container">
+            <h1 class="small-title">
+                Basic Usage
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify can be called without parameters, and it will use the default options. Textify converts the text
+                into a small spans and add a class to each span. You can use the class to create animations.
+            </p>
+            <h1 class="mini-title">
+                Intial DOM
+            </h1>
+            <img src="../pics/1.png" alt="error" class="code-pic">
+            <h1 class="mini-title">
+                DOM Output
+            </h1>
+            <img src="../pics/2.png" alt="error" class="code-pic">
+            <p class="paragraph">
+                The aftermath may seem verbose, but this won't be visible to the end user. They'll still just see "ABC".
+            </p>
+        </div>
+    </div>
+    <div class="guide-wrapper g-5">
+        <div class="guide-container">
+            <h1 class="small-title">
+                [data-textify] Attribute
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Fill the <span class="code">data-splitting</span> attribute with Textify API names to animate them when
+                you call <span class="code">new Textify()</span>.
+            </p>
+            <img src="../pics/3.png" alt="errors" class="code-pic">
+        </div>
+    </div>
+    <div class="guide-wrapper g-6">
+        <div class="guide-container">
+            <h1 class="small-title">Options</h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                <span class="code">new Textify()</span> have a some default parameter for options. The default options
+                are shown below, and some plugins offer expanded options.
+            </p>
+            <img src="../pics/4.png" alt="error" class="code-pic">
+        </div>
+    </div>
+    <div class="guide-wrapper g-7">
+        <div class="guide-container">
+            <h1 class="little-title">
+                INSTALLATION
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Why bother with build systems or files? Use the CodePen Template to make your own Textify demo!
+            </p>
+            <a href="#" class="btn">
+                Open Template on CodePen ↠
+            </a>
+        </div>
+    </div>
+    <div class="guide-wrapper g-8">
+        <div class="guide-container">
+            <h1 class="small-title">
+                Using NPM
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">Install Textify.js from NPM:</p>
+            <p class="code-text">
+                npm install splitting --save
+            </p>
+            <p class="paragraph">
+                Import Textify from the package.
+            </p>
+            <p class="code-text">
+                import Textify from 'textify.js'
+            </p>
+        </div>
+    </div>
+    <div class="guide-wrapper g-9">
+        <div class="guide-container">
+            <h1 class="small-title">
+                Using CDN
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">You can get the latest version of Textify.js from the <span class="code"><a
+                        href="https://www.jsdelivr.com/package/npm/textify.js" target="_blank">jsDelivr CDN</a></span>.
+            </p>
+            <p class="code-text">
+                &lt;script
+                src=&quot;https://cdn.jsdelivr.net/npm/textify.js@2.3.2/dist/Textify.min.js&quot;&gt;&lt;/script&gt;
+            </p>
+            <p class="code-text">
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/textify.js@2.3.2/dist/Textify.min.js&quot;
+                integrity=&quot;sha256-Xyh55kWU9CGYhWlSr+l8Fm69XcluShoIQ9NIRUAp2Bo=&quot;
+                crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+            </p>
+            <p class="paragraph">
+                Then call Textify on document load/ready or in a script at the bottom the of the <span
+                    class="code">&lt;body&gt;</span>
+            </p>
+            <p class="code-text">
+                &lt;script&gt;new Textify();&lt;/script&gt;
+            </p>
+        </div>
+    </div>
+    <div class="guide-wrapper g-10">
+        <div class="guide-container">
+            <h1 class="small-title">
+                Using a ESM (type="module")
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                You can use Textify.js as a module in a modern web browsers, node.js, and deno. This is the recommended
+                way to use Textify.js.
+            </p>
+            <p class="code-text">
+                &lt;script type=&quot;module&quot;&gt;<br />import textifyJs from
+                &quot;https://cdn.jsdelivr.net/npm/textify.js@2.3.2/+esm&quot;<br />&lt;/script&gt;
+        </div>
+    </div>
+    <div class="guide-wrapper g-11">
+        <div class="guide-container">
+            <h1 class="little-title">
+                INSTANCE METHODS
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify object exposed following methods. You can use them to control the animation. All methods are
+                chainable. like <span class="code">show()</span>, <span class="code">hide()</span> & <span
+                    class="code">onRefresh()</span>
+
+            </p>
+        </div>
+    </div>
+    <div class="guide-wrapper g-12">
+        <div class="guide-container">
+            <h1 class="small-title">
+                show()
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify's <span class="code">show()</span> method is used reveal the animation and use to create custom
+                reveal animations on specific events.
+            </p>
+            <img src="../pics/5.png" alt="error" class="code-pic">
+        </div>
+    </div>
+    <div class="guide-wrapper g-13">
+        <div class="guide-container">
+            <h1 class="small-title">
+                hide()
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify's <span class="code">hide()</span> method is used hide the animation and use to create custom
+                hide animations on specific events. and also use to create cool page leave transitions.
+            </p>
+            <img src="../pics/6.png" alt="error" class="code-pic">
+        </div>
+    </div>
+    <div class="guide-wrapper g-14">
+        <div class="guide-container">
+            <h1 class="small-title">
+                onRefresh()
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify's <span class="code">onRefresh()</span> method is used to refresh the animation. This method is
+                useful when you change the content of the element. This method is Re-calulate all texts position and
+                offset (call on DOM changes and resize event).
+            </p>
+            <img src="../pics/6.png" alt="error" class="code-pic">
+        </div>
+    </div>
+    <div class="guide-wrapper g-15">
+        <div class="guide-container">
+            <h1 class="little-title">
+                PLUGINS
+            </h1>
+            <div class="color-line"></div>
+            <p class="paragraph">
+                Textify.js have a plugin system. You can use it separate the code and make it more readable. You can
+            </p>
+        </div>
+    </div>
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>
