@@ -1,7 +1,7 @@
 import { Animation } from "../Components";
 
 // -------------------------------------------------------------------------------
-import { calculate, split, DEFAULT } from "../Utils";
+import { calculate, split, DEFAULT, isBrowser } from "../utils";
 
 // -------------------------------------------------------------------------------
 export default class Text extends Animation {
@@ -12,18 +12,20 @@ export default class Text extends Animation {
    */
   constructor({ element, options = {} }) {
     const lines = [];
-    const paragraphs = element.querySelectorAll("h1, h2, p");
+    const paragraphs = isBrowser ? element.querySelectorAll("h1, h2, p") : [];
 
     if (paragraphs.length === 0) {
       split({ element });
       split({ element });
-      lines.push(...element.querySelectorAll("span span"));
+      const spans = isBrowser ? element.querySelectorAll("span span") : [];
+      lines.push(...spans);
     }
     if (paragraphs.length !== 0) {
       paragraphs.forEach((element) => {
         split({ element });
         split({ element });
-        lines.push(...element.querySelectorAll("span span"));
+        const spans = isBrowser ? element.querySelectorAll("span span") : [];
+        lines.push(...spans);
       });
     }
 
@@ -40,7 +42,7 @@ export default class Text extends Animation {
     this.threshold = this.options.threshold;
 
     this.onResize();
-    if ("IntersectionObserver" in window) this.animateOut();
+    if (isBrowser && "IntersectionObserver" in window) this.animateOut();
   }
 
   addStyles(word, index) {

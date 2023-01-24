@@ -38,6 +38,8 @@ yarn add textify.js
 #
 ## Using CDN:
 ```html
+<link src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.css" rel="stylesheet"/>
+
 <script src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js"></script>
 ```
 
@@ -45,7 +47,11 @@ yarn add textify.js
 ## ES6 module
 ```html
 <script type="module">
-    import textifyJs from 'https://cdn.jsdelivr.net/npm/textify.js/+esm'
+    import textifyJs from 'https://cdn.jsdelivr.net/npm/textify.js/+esm';
+
+    const { Textify } = textifyJs;
+
+    new Textify();
 </script>
 ```
 
@@ -54,6 +60,12 @@ yarn add textify.js
 Import Textify.js:
 ```javascript
 import Textify from "textify.js";
+```
+
+Link ```Textify.min.css``` to document:
+
+```html
+<link src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.css" rel="stylesheet"/>
 ```
 
 Add `data-textify` attribute to your paragraph or an element that contain text.

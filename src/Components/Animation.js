@@ -1,4 +1,5 @@
 import Prefix from "../vendors/prefix";
+import { isBrowser } from "../utils";
 
 export default class Animation {
   constructor({ element, elements }) {
@@ -16,7 +17,7 @@ export default class Animation {
 
     this.threshold = 0.5;
 
-    if ("IntersectionObserver" in window) {
+    if (isBrowser && "IntersectionObserver" in window) {
       this.createObserver();
 
       this.animateOut();
@@ -26,23 +27,25 @@ export default class Animation {
   }
 
   createObserver() {
-    this.observer = new window.IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!this.isVisible && entry.isIntersecting) {
-            this.animateIn();
-            this.repeat ? observer.unobserve(entry.target) : null;
-          } else {
-            this.animateOut();
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: this.threshold
-      }
-    ).observe(this.target);
+    if (isBrowser) {
+      this.observer = new window.IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!this.isVisible && entry.isIntersecting) {
+              this.animateIn();
+              this.repeat ? observer.unobserve(entry.target) : null;
+            } else {
+              this.animateOut();
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: this.threshold
+        }
+      ).observe(this.target);
+    }
   }
 
   animateIn() {

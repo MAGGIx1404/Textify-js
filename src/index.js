@@ -2,10 +2,11 @@ import { Text } from "./Animations";
 
 // -------------------------------------------------------------------------------
 
-import { mapEach, DEFAULT, getEasing } from "./Utils";
+import { mapEach, DEFAULT, getEasing, isBrowser } from "./utils";
 import { TextifyTitle } from "./plugins";
 
 // -------------------------------------------------------------------------------
+
 class Textify {
   /**
    * @constructor
@@ -32,28 +33,30 @@ class Textify {
     }
 
     const controller = Object.assign({}, DEFAULT, options);
-
     const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify]";
-    this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
 
-    this.animations = mapEach(this.elements, (element) => {
-      return new Text({
-        element,
-        options: controller
+    if (isBrowser) {
+      if (!document.querySelector(DEFAULT_TARGET_ELEMENT_SELECTOR)) {
+        throw new Error("No element found with selector: " + DEFAULT_TARGET_ELEMENT_SELECTOR);
+      }
+      this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
+      this.animations = mapEach(this.elements, (element) => {
+        return new Text({
+          element,
+          options: controller
+        });
       });
-    });
-
-    this.elements.forEach((element) => {
-      const spans = element.querySelectorAll("span");
-      spans.forEach((span) => {
-        span.style.display = "inline-block";
-        span.style.overflow = "hidden";
-        span.style.verticalAlign = "top";
-        span.style.transformOrigin = "center";
+      this.elements.forEach((element) => {
+        const spans = element.querySelectorAll("span");
+        spans.forEach((span) => {
+          span.style.display = "inline-block";
+          span.style.overflow = "hidden";
+          span.style.verticalAlign = "top";
+          span.style.transformOrigin = "center";
+        });
       });
-    });
-
-    this.events();
+      this.events();
+    }
   }
 
   // --------
@@ -93,5 +96,7 @@ class Textify {
 
 export default { Textify, TextifyTitle };
 
-window.Textify = Textify;
-window.TextifyTitle = TextifyTitle;
+if (isBrowser) {
+  window.Textify = Textify;
+  window.TextifyTitle = TextifyTitle;
+}

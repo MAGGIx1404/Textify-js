@@ -577,6 +577,10 @@ body.guide ::-webkit-scrollbar {
   border-radius: 5px;
 }
 
+span.space {
+  padding: 1rem 2vw;
+}
+
 .guide-wrapper .guide-container p span.code {
   background: #0f0f0f;
   border: 1px solid #f7c978;

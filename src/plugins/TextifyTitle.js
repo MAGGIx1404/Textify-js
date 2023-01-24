@@ -2,7 +2,7 @@
 import { Title } from "../Animations";
 
 // -------------------------------------------------------------------------------
-import { mapEach, DEFAULT_TITLE, getEasing } from "../Utils";
+import { mapEach, DEFAULT_TITLE, getEasing, isBrowser } from "../utils";
 
 // -------------------------------------------------------------------------------
 
@@ -28,16 +28,17 @@ class TextifyTitle {
     }
 
     const controller = Object.assign({}, DEFAULT_TITLE, options);
-
     const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify-title]";
-    this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
-
-    this.animations = mapEach(this.elements, (element) => {
-      return new Title({
-        element,
-        options: controller
+    if (isBrowser) {
+      this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
+      this.animations = mapEach(this.elements, (element) => {
+        return new Title({
+          element,
+          options: controller
+        });
       });
-    });
+      this.events();
+    }
   }
 
   // --------

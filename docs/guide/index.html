@@ -153,10 +153,16 @@
             <div class="color-line"></div>
             <p class="paragraph">
                 Textify can be called without parameters, and it will use the default options. Textify converts the text
-                into a small spans and add a class to each span. You can use the class to create animations.
+                into a small spans and add a class to each span. You can use the class to create animations. Before that
+                link the
+                <span class="code">Textify.min.css</span> file to your document.
             </p>
             <h1 class="mini-title">
-                Intial DOM
+                CSS Link
+            </h1>
+            <p class="code-text">https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.css</p>
+            <h1 class="mini-title">
+                Initial DOM
             </h1>
             <img src="../pics/1.png" alt="error" class="code-pic">
             <h1 class="mini-title">
@@ -175,7 +181,7 @@
             </h1>
             <div class="color-line"></div>
             <p class="paragraph">
-                Fill the <span class="code">data-splitting</span> attribute with Textify API names to animate them when
+                Fill the <span class="code">data-textify</span> attribute with Textify API names to animate them when
                 you call <span class="code">new Textify()</span>.
             </p>
             <img src="../pics/3.png" alt="errors" class="code-pic">
@@ -451,7 +457,7 @@
                 Import Textify from the package.
             </p>
             <p class="code-text">
-                import Textify from 'textify.js'
+                import { Textify } from 'textify.js'
             </p>
         </div>
     </div>
@@ -493,8 +499,15 @@
                 way to use Textify.js.
             </p>
             <p class="code-text">
-                &lt;script type=&quot;module&quot;&gt;<br />import textifyJs from
-                &quot;https://cdn.jsdelivr.net/npm/textify.js/+esm&quot;;<br />&lt;/script&gt;
+                &lt;script type=&quot;module&quot;&gt;<br />
+                <span class="space"></span>import textifyJs from
+                &quot;https://cdn.jsdelivr.net/npm/textify.js/+esm&quot;;<br />
+                <span class="space"></span>const { Textify } = textifyJs;
+                <br />
+                <span class="space"></span>new Textify();
+                <br />
+                &lt;/script&gt;
+            </p>
         </div>
     </div>
     <div class="guide-wrapper g-11" id="method">
@@ -595,9 +608,11 @@
                 Import as a module :
             </h1>
             <p class="code-text">
-                &lt;script type=&quot;module&quot;&gt;<br />import textifyJs from
+                &lt;script type=&quot;module&quot;&gt;<br />
+                <span class="space"></span>import textifyJs from
                 &quot;https://cdn.jsdelivr.net/npm/textify.js/+esm
-                &quot;<br />import { TextifyTitle } from &quot;textify.js&quot;<br />&lt;/script&gt;
+                &quot;<br />
+                <span class="space"></span>const { TextifyTitle } = textifyJs;<br />&lt;/script&gt;
             </p>
             <h1 class="mini-title">
                 Import from Package (npm) :

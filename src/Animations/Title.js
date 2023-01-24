@@ -2,7 +2,7 @@
 import { Animation } from "../Components";
 
 // -------------------------------------------------------------------------------
-import { calculate, split, DEFAULT_TITLE } from "../Utils";
+import { calculate, split, DEFAULT_TITLE, isBrowser } from "../utils";
 
 // -------------------------------------------------------------------------------
 const titles = ["H1", "H2", "H3", "H4", "H5", "H6"];
@@ -17,12 +17,12 @@ export default class Title extends Animation {
   constructor({ element, options = {} }) {
     const words = [];
     const chars = [];
-    const texts = element.querySelectorAll("h1, h2, p");
+    const texts = isBrowser ? element.querySelectorAll("h1, h2, p") : [];
 
     if (titles.includes(element.tagName)) {
       if (texts.length === 0) {
         split({ element });
-        const newWords = element.querySelectorAll("span");
+        const newWords = isBrowser ? element.querySelectorAll("span") : [];
         newWords.forEach((word) => {
           word.classList.add("word");
           words.push(word);
@@ -33,7 +33,7 @@ export default class Title extends Animation {
       if (texts.length !== 0) {
         texts.forEach((element) => {
           split({ element });
-          const newWords = element.querySelectorAll("span");
+          const newWords = isBrowser ? element.querySelectorAll("span") : [];
           newWords.forEach((word) => {
             word.classList.add("word");
             words.push(word);
@@ -47,7 +47,7 @@ export default class Title extends Animation {
         let itemText = word.innerText.split("");
         itemText.map((letter) => (newString += letter == " " ? `<span class='gap'></span>` : `<span class='char'>${letter}</span>`));
         word.innerHTML = newString;
-        const newChars = word.querySelectorAll("span");
+        const newChars = isBrowser ? word.querySelectorAll("span") : [];
         chars.push(...newChars);
       });
 
@@ -82,7 +82,7 @@ export default class Title extends Animation {
     this.onResize();
 
     // ----------
-    if ("IntersectionObserver" in window) this.animateOut();
+    if (isBrowser && "IntersectionObserver" in window) this.animateOut();
   }
 
   // ----------

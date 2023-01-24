@@ -35,7 +35,7 @@ lenis.on("scroll", ({ scroll }) => {
 
 // text animation
 
-const scrollTitles = new TextifyTitle({
+new TextifyTitle({
   selector: ".scroll-title",
   duration: 500,
   threshold: 0,
@@ -43,7 +43,7 @@ const scrollTitles = new TextifyTitle({
   once: false
 });
 
-const scrollTexts = new Textify({
+new Textify({
   selector: ".paragraph",
   duration: 1000,
   threshold: 0,
