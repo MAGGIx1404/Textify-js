@@ -1,4 +1,5 @@
 const path = require("path");
+const copyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
@@ -37,7 +38,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [],
+  plugins: [
+    new copyWebpackPlugin({
+      patterns: [{ from: "./style/Textify.css", to: "Textify.min.css" }]
+    })
+  ],
   optimization: {
     minimize: true,
     minimizer: [
