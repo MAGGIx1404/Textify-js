@@ -83,7 +83,7 @@ body {
 }
 
 html {
-  scroll-behavior: initial;
+  scroll-behavior: smooth;
   font-size: calc(100vw / 1920 * 10);
 }
 
@@ -673,4 +673,77 @@ body.guide ::-webkit-scrollbar {
   width: 50%;
   height: auto;
   margin-top: 2rem;
+}
+
+.g-18 .easing-list {
+  margin-top: 2rem;
+}
+
+.g-18 .easing-list li {
+  font-size: 2rem;
+  padding: 1rem 0 1rem 3rem;
+  position: relative;
+}
+
+.g-18 .easing-list li::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: #f18271;
+  border-radius: 50%;
+}
+/* table */
+
+table {
+  border: 2px solid #f18271;
+  width: 100%;
+  margin-top: 5rem;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table td,
+table th {
+  border: 2px solid #f18271;
+}
+
+table th {
+  padding: 2rem;
+  font-size: 3rem;
+  color: transparent;
+  background: linear-gradient(
+    -90deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-background-clip: text;
+}
+
+table td {
+  font-size: 1.6rem;
+  padding: 2rem;
+  width: 25%;
+}
+
+table td span.code {
+  background: #0f0f0f;
+  padding: 0.5rem;
+  border: 1px solid #f7c978;
+}
+
+table td .dif-text {
+  color: #f3a469;
 }
