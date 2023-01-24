@@ -42,6 +42,22 @@
   font-stretch: normal;
 }
 
+:root {
+  --grad: linear-gradient(90deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+  --grad-rev: linear-gradient(
+    -90deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+}
+
 .tk-halyard-micro {
   font-family: "halyard-micro", sans-serif;
 }
@@ -110,18 +126,7 @@ h1.title {
   font-size: 25rem;
   font-weight: 900;
   color: transparent;
-  background: linear-gradient(
-    90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
@@ -152,18 +157,7 @@ h1.little-title {
   font-weight: bold;
   font-family: "widescreen-ex", sans-serif;
   color: transparent;
-  background: linear-gradient(
-    90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
@@ -173,18 +167,7 @@ h1.small-title {
   font-size: 5rem;
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(
-    90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
@@ -194,18 +177,7 @@ h1.mini-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(
-    -90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
@@ -508,18 +480,7 @@ body.guide ::-webkit-scrollbar {
 
 .side-bar-inner ul li.big a {
   color: transparent;
-  background: linear-gradient(
-    90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
@@ -574,18 +535,7 @@ body.guide ::-webkit-scrollbar {
 }
 
 .color-line {
-  background: linear-gradient(
-    90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   width: 100%;
   height: 2px;
   margin-top: 2rem;
@@ -599,34 +549,12 @@ body.guide ::-webkit-scrollbar {
   width: max-content;
   height: 6rem;
   font-size: 2rem;
-  background: linear-gradient(
-    90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad);
   transition: all 0.5s ease;
 }
 
 .guide-wrapper .guide-container a.btn:hover {
-  background: linear-gradient(
-    -90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad-rev);
 }
 
 .guide-wrapper .guide-container {
@@ -715,18 +643,7 @@ table th {
   padding: 2rem;
   font-size: 3rem;
   color: transparent;
-  background: linear-gradient(
-    -90deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background: var(--grad-rev);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
@@ -746,4 +663,54 @@ table td span.code {
 
 table td .dif-text {
   color: #f3a469;
+}
+
+ul.examples-list {
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+}
+
+ul.examples-list li {
+  width: 100%;
+  height: auto;
+  padding: 4rem 0;
+}
+
+ul.examples-list li a {
+  font-size: 2rem;
+  background: var(--grad);
+  padding: 2rem;
+}
+
+ul.examples-list li a:hover {
+  background: var(--grad-rev);
+}
+
+ul.con-list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  gap: 2rem;
+}
+
+ul.con-list li {
+  flex: 0 0 10%;
+  max-width: 10%;
+  width: 100%;
+  height: auto;
+}
+
+ul.con-list li a {
+  overflow: hidden;
+}
+
+ul.con-list li a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #f18271;
 }

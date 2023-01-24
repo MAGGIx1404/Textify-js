@@ -7,20 +7,19 @@ const options = {
   threshold: 0.5
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const id = entry.target.getAttribute("id");
-      const link = document.querySelector(`.side-list-item a[href="#${id}"]`);
-      links.forEach((link) => link.classList.remove("active"));
-      link.classList.add("active");
-    } else {
-      const id = entry.target.getAttribute("id");
-      const link = document.querySelector(`.side-list-item a[href="#${id}"]`);
-      link.classList.remove("active");
+      links.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
+      });
     }
-  });
-}, options);
+  }, options);
+});
 
 sections.forEach((section) => {
   observer.observe(section);
