@@ -35,7 +35,7 @@ lenis.on("scroll", ({ scroll }) => {
 new TextifyTitle({
   selector: ".title-1",
   duration: 800,
-  delay: 50,
+  stagger: 50,
   once: false,
   threshold: 0
 });
@@ -50,7 +50,7 @@ new Textify({
 new TextifyTitle({
   selector: ".title-2",
   duration: 500,
-  delay: 100,
+  stagger: 100,
   once: false,
   reveal: false,
   scale: 0,
@@ -71,7 +71,7 @@ new Textify({
 new TextifyTitle({
   selector: ".title-3",
   duration: 1000,
-  delay: 50,
+  stagger: 50,
   once: false,
   rotation: 90,
   scale: 0,
@@ -97,7 +97,7 @@ new Textify({
 new TextifyTitle({
   selector: ".scroll-title",
   duration: 1000,
-  delay: 50,
+  stagger: 50,
   once: false,
   scale: 0,
   fade: true,

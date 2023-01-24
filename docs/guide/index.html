@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 
 <head>
     <meta charset="UTF-8">
@@ -186,7 +186,237 @@
                 <span class="code">new Textify()</span> have a some default parameter for options. The default options
                 are shown below, and some plugins offer expanded options.
             </p>
-            <img src="../pics/4.png" alt="error" class="code-pic">
+
+            <table class="option-table">
+                <thead>
+                    <tr>
+                        <th>
+                            Option
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Default
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="code">selector</span>
+                        </td>
+                        <td>
+                            <span class="code">object</span>
+                        </td>
+                        <td>
+                            <span class="code">[data-textify]</span>
+                        </td>
+                        <td>
+                            The selector of the element that you want to animate. you can use any selector like
+                            <span class="dif-text">class</span>, <span class="dif-text">id</span> or <span
+                                class="dif-text">data-attribute</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">duration</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">1450</span>
+                        </td>
+                        <td>
+                            Duration of text animation in <span class="dif-text">ms</span> (1000 ms=1 second). </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">stagger</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">100</span>
+                        </td>
+                        <td>
+                            Delay of text animation in <span class="dif-text">ms</span> (1000 ms = 1 second). for good
+                            animation keep it between <span class="dif-text">0</span> to <span
+                                class="dif-text">500</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">fade</span>
+                        </td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                        <td>
+                            <span class="code">false</span>
+                        </td>
+                        <td>
+                            If you want to fade the text, set it to <span class="dif-text">true</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">top</span>
+                        </td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                        <td>
+                            <span class="code">false</span>
+                        </td>
+                        <td>
+                            If you want to animate the text from top, set it to <span class="dif-text">true</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">reveal</span>
+                        </td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                        <td>
+                            <span class="code">true</span>
+                        </td>
+                        <td>
+                            If you don't want to reveal the words, set it to <span class="dif-text">false</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">once</span>
+                        </td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                        <td>
+                            <span class="code">true</span>
+                        </td>
+                        <td>
+                            If you want to animate the text every time the user scrolls to the element, set it to
+                            <span class="dif-text">false</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">rotation</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">0</span>
+                        </td>
+                        <td>
+                            Rotation of the word in <span class="dif-text">deg</span>. you can use any number of both
+                            positive and
+                            negative. for good animation keep it between <span class="dif-text">-15</span> to <span
+                                class="dif-text">15</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">scale</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">1</span>
+                        </td>
+                        <td>
+                            Scale of the word. you can use any number of both positive and negative.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">easing</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">default</span>
+                        </td>
+                        <td>
+                            easing of the text animation. you can use any of the following values of <span
+                                class="dif-text">easing</span> which are available in our
+                            <a href="#" class="dif-text">custom ease.</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">fadeDuration</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">1000</span>
+                        </td>
+                        <td>
+                            Duration of fade animation in <span class="dif-text">ms</span> (1000 ms=1 second). </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">fadeEasing</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">default</span>
+                        </td>
+                        <td>
+                            easing of the fade animation. you can use any of the following values of <span
+                                class="dif-text">easing</span> which are available in our
+                            <a href="#" class="dif-text">custom ease.</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">threshold</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">0.5</span>
+                        </td>
+                        <td>
+                            Threshold of the text animation. you can use any number between <span
+                                class="dif-text">0</span> to <span class="dif-text">1</span>. for good animation keep
+                            it between <span class="dif-text">0.3</span> to <span class="dif-text">0.7</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="code">transformOrigin</span>
+                        </td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                        <td>
+                            <span class="code">center center</span>
+                        </td>
+                        <td>
+                            Transform origin of the text. first value is for <span class="dif-text">x-axis</span> and
+                            second value is for <span class="dif-text">y-axis</span>.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="guide-wrapper g-7" id="install">
@@ -431,7 +661,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <span class="code">delay</span>
+                            <span class="code">stagger</span>
                         </td>
                         <td>
                             <span class="code">string</span>

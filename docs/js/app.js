@@ -39,7 +39,7 @@ const scrollTitles = new TextifyTitle({
   selector: ".scroll-title",
   duration: 500,
   threshold: 0,
-  delay: 20,
+  stagger: 20,
   once: false
 });
 
@@ -47,5 +47,6 @@ const scrollTexts = new Textify({
   selector: ".paragraph",
   duration: 1000,
   threshold: 0,
-  once: false
+  once: false,
+  fade: true
 });

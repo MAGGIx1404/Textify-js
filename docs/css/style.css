@@ -83,7 +83,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: initial;
   font-size: calc(100vw / 1920 * 10);
 }
 

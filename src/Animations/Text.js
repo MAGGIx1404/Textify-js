@@ -19,7 +19,6 @@ export default class Text extends Animation {
       split({ element });
       lines.push(...element.querySelectorAll("span span"));
     }
-
     if (paragraphs.length !== 0) {
       paragraphs.forEach((element) => {
         split({ element });
@@ -45,9 +44,10 @@ export default class Text extends Animation {
   }
 
   addStyles(word, index) {
-    word.style.transition = `transform ${this.options.duration}ms ${index * this.options.delay}ms ${this.options.easing}, opacity ${
-      this.options.duration - 200
-    }ms ${index * this.options.delay}ms ${this.options.fadeEasing}`;
+    word.style.transition = `transform ${this.options.duration}ms ${index * this.options.stagger}ms ${this.options.easing}, opacity ${
+      this.options.fadeDuration
+    }ms ${index * this.options.stagger}ms ${this.options.fadeEasing}`;
+    word.style.transformOrigin = this.options.transformOrigin ? this.options.transformOrigin : "center center";
     word.style[this.transformPrefix] = "translateY(0) scale(1) rotate(0)";
     this.options.fade ? (word.style.opacity = "1") : null;
   }
@@ -81,18 +81,18 @@ export default class Text extends Animation {
     if (typeof this.lines === "object") {
       Object.keys(this.lines).forEach((key) => {
         this.lines[key].forEach((word) => {
-          word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}150%)  scale(${this.options.scale}) rotate(${
-            this.options.rotation
-          }deg)`;
+          word.style[this.transformPrefix] = `translateY(${this.options.reveal ? `${this.options.top ? "-" : ""}150%` : "0%"})  scale(${
+            this.options.scale
+          }) rotate(${this.options.rotation}deg)`;
           this.options.fade ? (word.style.opacity = "0") : null;
         });
       });
     } else {
       this.lines.forEach((line) => {
         line.forEach((word) => {
-          word.style[this.transformPrefix] = `translateY(${this.options.top ? "-" : ""}150%)  scale(${this.options.scale}) rotate(${
-            this.options.rotation
-          }deg)`;
+          word.style[this.transformPrefix] = `translateY(${this.options.reveal ? `${this.options.top ? "-" : ""}150%` : "0%"})  scale(${
+            this.options.scale
+          }) rotate(${this.options.rotation}deg)`;
           this.options.fade ? (word.style.opacity = "0") : null;
         });
       });

@@ -90,9 +90,9 @@ export default class Title extends Animation {
     super.animateIn();
     if (typeof this.lines === "undefined") return;
     this.elements.chars.forEach((char, index) => {
-      char.style.transition = `transform ${this.options.duration}ms ${index * this.options.delay}ms ${this.options.easing}, opacity ${
+      char.style.transition = `transform ${this.options.duration}ms ${index * this.options.stagger}ms ${this.options.easing}, opacity ${
         this.options.fadeDuration
-      }ms ${index * this.options.delay}ms ${this.options.fadeEasing}`;
+      }ms ${index * this.options.stagger}ms ${this.options.fadeEasing}`;
       char.style.transformOrigin = this.options.transformOrigin ? this.options.transformOrigin : "center center";
       char.style[this.transformPrefix] = "translateY(0) rotate(0) scale(1)";
       this.options.fade ? (char.style.opacity = 1) : null;
