@@ -427,6 +427,7 @@ body.guide ::-webkit-scrollbar {
   z-index: 1;
   overflow-y: scroll;
   background: #000000;
+  transition: all 1s ease-in-out;
 }
 
 .side-bar-inner {
@@ -717,4 +718,238 @@ ul.con-list li a img {
   height: 100%;
   border-radius: 50%;
   border: 1px solid #f18271;
+}
+
+/* Menu-icon */
+
+.menu-icon-space {
+    height: 7vh;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    z-index: 999999999999;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-icon {
+    height: 3rem;
+    width: 4rem;
+    position: absolute;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-icon:hover {
+    cursor: pointer;
+  }
+
+  .line-1,
+  .line-2,
+  .line-3 {
+    height: 0.5rem;
+    width: 100%;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .menu-icon .line-1 {
+    animation: rev-animation-1 0.8s ease forwards;
+  }
+  .menu-icon .line-2 {
+    animation: rev-animation-2 0.8s ease forwards;
+  }
+  .menu-icon .line-3 {
+    animation: rev-animation-3 0.8s ease forwards;
+  }
+
+  .menu-icon.active .line-1 {
+    animation: add-animation 0.8s ease forwards;
+  }
+  .menu-icon.active .line-2 {
+    animation: add-animation-2 0.8s ease forwards;
+  }
+  .menu-icon.active .line-3 {
+    animation: add-animation-3 0.8s ease forwards;
+  }
+
+  @keyframes add-animation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(1.3rem);
+    }
+    100% {
+      transform: translateY(1.3rem) scale(1) rotateZ(45deg);
+    }
+  }
+
+  @keyframes add-animation-2 {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes add-animation-3 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1.3rem);
+    }
+    100% {
+      transform: translateY(-1.3rem) scale(1) rotateZ(-45deg);
+    }
+  }
+
+  @keyframes rev-animation-1 {
+    0% {
+      transform: translateY(1.3rem) scale(1) rotateZ(45deg);
+    }
+    50% {
+      transform: translateY(1.3rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rev-animation-2 {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rev-animation-3 {
+    0% {
+      transform: translateY(-1.3rem) scale(1) rotateZ(-45deg);
+    }
+    50% {
+      transform: translateY(-1.3rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+/* Menu-icon end */
+
+.side-bar.active{
+    left: 0;
+    width: 40%;
+    margin-top: 5vh;
+    transition: all 1s ease-in-out;
+}
+
+@media only screen and (max-width:1024px){
+  h1.little-title{
+    font-size: calc(100vw /1024 * 50);
+  }
+}
+
+@media only screen and (max-width:1024px){
+    table th {
+        padding: 1rem;
+    }
+    .guide-wrapper .guide-container p.code-text{
+        width: 100%;
+        font-size: 1.7rem;
+    }
+    h1.title {
+        font-size: 14rem;
+    }
+    h1.side-title{
+        margin-top: 5rem;
+        font-size:10rem;
+    }
+    h1.text-title .word .char{
+        font-size: 10rem;
+    }
+    h1.big-title{
+        font-size: 10rem;
+    }
+    .sec-5 a{
+        font-size:3rem;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .side-bar{
+        left: -100%;
+        margin-top: 5vh;
+    }
+    .guide-wrapper {
+        width: 100%;
+    }
+    .menu-icon-space{
+        transform: translateY(0);
+    }
+    .guide-container img.code-pic{
+        width: 80%;
+    }
+    h1.title {
+        font-size: 10rem;
+    }
+    h1.side-title{
+        margin-top: 7rem;
+        font-size:7rem;
+    }
+    h1.text-title .word .char {
+        font-size: 7rem;
+    }
+    h1.big-title {
+        font-size: 7rem;
+    }
+    p.paragraph{
+        width: 70%;
+    }
+    .sec-5 .content{
+        padding: 10rem 5rem 10rem 5rem;
+    }
+    .sec-5 a {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .side-bar {
+        width: 50% !important;
+    }
+    .guide-wrapper .guide-container{
+        padding-top: 7vh;
+        padding-bottom: 7vh;
+    }
+    .guide-container img.code-pic{
+        width: 90%;
+    }
+    h1.side-title {
+        margin-top: 15rem;
+        font-size: 7rem;
+    }
 }
