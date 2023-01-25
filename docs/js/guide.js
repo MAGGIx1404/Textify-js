@@ -1,5 +1,7 @@
 const links = document.querySelectorAll(".side-list-item:not(.big) a");
 const sections = document.querySelectorAll(".guide-wrapper");
+const menuIcon = document.querySelector(".menu-icon");
+const sideBar = document.querySelector(".side-bar")
 
 const options = {
   root: null,
@@ -24,3 +26,11 @@ const observer = new IntersectionObserver((entries, observer) => {
 sections.forEach((section) => {
   observer.observe(section);
 });
+
+menuIcon.addEventListener("click", () => {
+    menuIcon.classList.toggle("active");
+  });
+
+  menuIcon.addEventListener("click", () => {
+    sideBar.classList.toggle("active");
+  })
