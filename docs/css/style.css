@@ -881,6 +881,22 @@ ul.con-list li a img {
         width: 100%;
         font-size: 1.7rem;
     }
+    h1.title {
+        font-size: 14rem;
+    }
+    h1.side-title{
+        margin-top: 5rem;
+        font-size:10rem;
+    }
+    h1.text-title .word .char{
+        font-size: 10rem;
+    }
+    h1.big-title{
+        font-size: 10rem;
+    }
+    .sec-5 a{
+        font-size:3rem;
+    }
 }
 
 @media only screen and (max-width:768px){
@@ -888,17 +904,36 @@ ul.con-list li a img {
         left: -100%;
         margin-top: 5vh;
     }
-
     .guide-wrapper {
         width: 100%;
     }
-
     .menu-icon-space{
         transform: translateY(0);
     }
-
     .guide-container img.code-pic{
         width: 80%;
+    }
+    h1.title {
+        font-size: 10rem;
+    }
+    h1.side-title{
+        margin-top: 7rem;
+        font-size:7rem;
+    }
+    h1.text-title .word .char {
+        font-size: 7rem;
+    }
+    h1.big-title {
+        font-size: 7rem;
+    }
+    p.paragraph{
+        width: 70%;
+    }
+    .sec-5 .content{
+        padding: 10rem 5rem 10rem 5rem;
+    }
+    .sec-5 a {
+        width: 70%;
     }
 }
 
@@ -912,5 +947,9 @@ ul.con-list li a img {
     }
     .guide-container img.code-pic{
         width: 90%;
+    }
+    h1.side-title {
+        margin-top: 15rem;
+        font-size: 7rem;
     }
 }
