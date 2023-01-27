@@ -183,3 +183,5 @@ textObj.onRefresh();
 ## License
 
 Released under [MIT](/LICENSE) by [@MAGGIx1404](https://github.com/MAGGIx1404).
+
+[![Verified on Openbase](https://badges.openbase.com/js/verified/textify.js.svg?style=openbase&token=ch/gLcW1UyTQwxJKQ/uOvP1bBO06CXGsXQ2pcLgbs+E=)](https://openbase.com/js/textify.js?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
