@@ -186,3 +186,7 @@ textObj.onRefresh();
 ## License
 
 Released under [MIT](/LICENSE) by [@MAGGIx1404](https://github.com/MAGGIx1404).
+
+## Rate us
+
+Enjoying textify.js? [Please leave a short review on Openbase](https://openbase.com/js/textify.js#rate)
