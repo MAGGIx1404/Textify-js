@@ -96,6 +96,8 @@ html,
 body {
   min-height: 100%;
   height: auto;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 html {
@@ -868,12 +870,9 @@ ul.con-list li a img {
 }
 
 @media only screen and (max-width:1024px){
-  h1.little-title{
-    font-size: calc(100vw /1024 * 50);
-  }
-}
-
-@media only screen and (max-width:1024px){
+    h1.little-title{
+        font-size: calc(100vw /1024 * 50);
+      }
     table th {
         padding: 1rem;
     }
@@ -918,7 +917,12 @@ ul.con-list li a img {
     }
     h1.side-title{
         margin-top: 7rem;
-        font-size:7rem;
+        position: relative;
+        right: 71%;
+        font-size: 6.5rem;
+    }
+    h1.side-title.move-title-2{
+        right: 4%;
     }
     h1.text-title .word .char {
         font-size: 7rem;
@@ -934,6 +938,19 @@ ul.con-list li a img {
     }
     .sec-5 a {
         width: 70%;
+    }
+    .sec-3 .shape1{
+        display: none;
+    }
+    .sec-3 .shape2{
+        width: 20vw;
+        height: 20vw;
+    }
+    h1.sub-title{
+        font-size: 5rem;
+    }
+    .sec-2{
+        margin: 5vh 0;
     }
 }
 
@@ -951,5 +968,12 @@ ul.con-list li a img {
     h1.side-title {
         margin-top: 15rem;
         font-size: 7rem;
+    }
+    .banner.sec-3,
+    .banner.sec-4{
+        height: 60vh;
+    }
+    h1.side-title.move-title-2{
+        right: 8%;
     }
 }
