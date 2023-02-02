@@ -59,7 +59,7 @@ yarn add textify.js
 ## Usage
 Import Textify.js:
 ```javascript
-import Textify from "textify.js";
+import Animations from "textify.js";
 ```
 
 Link ```Textify.min.css``` to document:
@@ -75,6 +75,9 @@ Add `data-textify` attribute to your paragraph or an element that contain text.
 
 Initialize textify to see magic.
 ```javascript
+import Animations from "textify.js";
+
+const { Textify } = Animations;
 new Textify()
 ```
 

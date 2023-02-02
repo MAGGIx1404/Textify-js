@@ -454,10 +454,19 @@
                 npm install textify.js --save
             </p>
             <p class="paragraph">
-                Import Textify from the package.
+                Import Textify's object from the package with any name, which are you want. after import object, you can
+                use it with two ways,
             </p>
             <p class="code-text">
-                import { Textify } from 'textify.js'
+                import Animations from 'textify.js';
+                <br />
+                <!-- way one -->
+                <br />
+                const { Textify } = Animations;
+                <br />
+                <!-- way two -->
+                <br />
+                const Textify = Animations.Textify();
             </p>
         </div>
     </div>
@@ -618,7 +627,10 @@
                 Import from Package (npm) :
             </h1>
             <p class="code-text">
-                import { TextifyTitle } from &quot;textify.js&quot;
+                import Animations from &quot;textify.js&quot;
+                <br />
+                <br />
+                const { TextifyTitle } = Animations;
             </p>
             <h1 class="mini-title">
                 Note :
