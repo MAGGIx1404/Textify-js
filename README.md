@@ -3,6 +3,9 @@
     <img width="600" src="./logo.png" alt="">
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
+  
+
+[![Verified on Openbase](https://badges.openbase.com/js/verified/textify.js.svg?style=openbase&token=ch/gLcW1UyTQwxJKQ/uOvP1bBO06CXGsXQ2pcLgbs+E=)](https://openbase.com/js/textify.js?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
   <p>
     <img src="https://data.jsdelivr.com/v1/package/npm/textify.js/badge?style=rounded">
     <img src="https://img.shields.io/npm/v/textify.js?color=orange&label=version">
@@ -186,3 +189,7 @@ textObj.onRefresh();
 ## License
 
 Released under [MIT](/LICENSE) by [@MAGGIx1404](https://github.com/MAGGIx1404).
+
+## Rate us
+
+Enjoying textify.js? [Please leave a short review on Openbase](https://openbase.com/js/textify.js#rate)
