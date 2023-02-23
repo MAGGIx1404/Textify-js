@@ -15,7 +15,7 @@
     <a href="https://www.javascript.com/" title="Go to JavaScript homepage"><img src="https://img.shields.io/badge/Made_with-JavaScript-orange?logo=javascript&logoColor=white" alt="Made with JavaScript"></a>
   </p>
   <p>
-    <a href="https://maggix1404.github.io/Textify.js/" target="_blank">
+    <a href="maggix1404.github.io/Textify-js/" target="_blank">
     ⛰️<br>
     <b>DEMO</b></a>
   </p>
