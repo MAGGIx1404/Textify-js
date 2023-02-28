@@ -132,9 +132,9 @@ TextifyTitle plugin is used to create a title animation. it's a simple plugin. y
 # Documentation
 Check main documentation of Textify.js here:
 
-- [Site](https://maggix1404.github.io/Textify.js/)
-- [Documentation & Examples](https://maggix1404.github.io/Textify.js/guide/index.html)
-- [Demo](https://maggix1404.github.io/Textify.js/demo/index.html)
+- [Site](https://maggix1404.github.io/Textify-js/)
+- [Documentation & Examples](https://maggix1404.github.io/Textify-js/guide/index.html)
+- [Demo](https://maggix1404.github.io/Textify-js/index.html)
 
 #
 # Methods
