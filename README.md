@@ -4,8 +4,6 @@
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
   
-
-[![Verified on Openbase](https://badges.openbase.com/js/verified/textify.js.svg?style=openbase&token=ch/gLcW1UyTQwxJKQ/uOvP1bBO06CXGsXQ2pcLgbs+E=)](https://openbase.com/js/textify.js?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
   <p>
     <img src="https://data.jsdelivr.com/v1/package/npm/textify.js/badge?style=rounded">
     <img src="https://img.shields.io/npm/v/textify.js?color=orange&label=version">
