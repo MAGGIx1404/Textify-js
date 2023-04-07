@@ -1,6 +1,6 @@
 <div align="center">
   <h1>
-    <img width="600" src="./logo.png" alt="">
+    <img width="600" src="./logo.png" alt="logo">
   </h1>
   <p>Simple scroll based text reveal animation library.</p>
   
