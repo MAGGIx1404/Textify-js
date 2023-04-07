@@ -177,12 +177,6 @@ textObj.onRefresh();
 * circOut
 * circInOut
 
-# Who's using Textify.js?
-- [Travlrid.com](http://www.travlrid.com/)
-- [wyrd.dev](https://wyrd.dev/)
-- [jeetramoliya.in](https://www.jeetramoliya.in/)
-- [Sleek_Ultra_Slim](https://sleekultraslim.com.au/)
-
 
 ## License
 
