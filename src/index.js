@@ -1,102 +1,42 @@
-import { Text } from "./Animations";
+import Texts from "./types/Texts";
+import { Config } from "./utils/Config";
+import { isBrowser } from "./utils/isBrowser";
+import { mapEach } from "./utils/Dom";
 
-// -------------------------------------------------------------------------------
+export default class Textify {
+  constructor(options) {
+    this.DEFAULT_ELEMENT = options.el || "[data-textify]";
+    this.options = options;
+    this.config = Config;
 
-import { mapEach, DEFAULT, getEasing, isBrowser } from "./utils";
-import { TextifyTitle } from "./plugins";
-
-// -------------------------------------------------------------------------------
-
-class Textify {
-  /**
-   * @constructor
-   * @param {object} options - Configuration object
-   */
-  constructor(options = {}) {
-    if (!options.easing) {
-      options.easing = getEasing("default");
-    } else {
-      try {
-        options.easing = getEasing(options.easing);
-      } catch (err) {
-        throw new Error(err);
-      }
-    }
-    if (!options.fadeEasing) {
-      options.fadeEasing = getEasing("default");
-    } else {
-      try {
-        options.fadeEasing = getEasing(options.fadeEasing);
-      } catch (err) {
-        throw new Error(err);
-      }
-    }
-
-    const controller = Object.assign({}, DEFAULT, options);
-    const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify]";
+    this.controls = Object.assign({}, this.config, this.options);
 
     if (isBrowser) {
-      if (!document.querySelector(DEFAULT_TARGET_ELEMENT_SELECTOR)) {
-        throw new Error("No element found with selector: " + DEFAULT_TARGET_ELEMENT_SELECTOR);
+      if (!document.querySelector(this.DEFAULT_ELEMENT)) {
+        throw new Error(`Textify: Element "${this.DEFAULT_ELEMENT}" is not found.`);
       }
-      this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
-      this.animations = mapEach(this.elements, (element) => {
-        return new Text({
-          element,
-          options: controller
+
+      this.TARGETS = [...document.querySelectorAll(this.DEFAULT_ELEMENT)];
+
+      this.ANIMATIONS = mapEach(this.TARGETS, (element) => {
+        return new Texts({
+          element: element,
+          controls: this.controls
         });
       });
-      this.elements.forEach((element) => {
-        const spans = element.querySelectorAll("span");
-        spans.forEach((span) => {
-          span.style.display = "inline-block";
-          span.style.overflow = "hidden";
-          span.style.verticalAlign = "top";
-          span.style.transformOrigin = "center";
-        });
-      });
-      this.events();
+
+      console.log(this.ANIMATIONS);
     }
   }
-
-  // --------
-  events() {
-    window.addEventListener("resize", this.onResize.bind(this));
-  }
-
-  //   animations
-  show() {
-    this.animations.forEach((animation) => {
-      animation.animateIn();
-    });
-  }
-
-  hide() {
-    this.animations.forEach((animation) => {
-      animation.animateOut();
-    });
-  }
-
-  // --------
-  onResize() {
-    this.animations.forEach((animation) => {
-      animation.onResize && animation.onResize();
-    });
-  }
-
-  // --------
-  onRefresh() {
-    this.animations.forEach((animation) => {
-      animation.onRefresh && animation.onRefresh();
-    });
-  }
 }
 
-// -------------------------------------------------------------------------------
-
-export default { Textify, TextifyTitle };
-
-if (isBrowser) {
-  window.Textify = Textify;
-  window.TextifyTitle = TextifyTitle;
-}
+new Textify({
+  el: ".title",
+  observer: {
+    repeat: true,
+    threshold: 0.25
+  },
+  animation: {
+    overflow: true
+  }
+});
