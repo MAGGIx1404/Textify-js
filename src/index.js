@@ -10,6 +10,7 @@ export default class Textify {
     this.config = Config;
 
     this.controls = Object.assign({}, this.config, this.options);
+    console.log(this.controls);
 
     if (isBrowser) {
       if (!document.querySelector(this.DEFAULT_ELEMENT)) {
