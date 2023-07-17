@@ -1,17 +1,35 @@
+/*
+    fix safari custom kerning by adding a space after each character
+*/
+* {
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -ms-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: none;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 /* ----------------------------------------- */
-.textify-title .word,
-.textify-title .char {
+.textify .word,
+.textify .char {
   display: inline-block;
+  will-change: transform, opacity; /* for safari */
 }
 
 /* ----------------------------------------- */
 
-.textify-title .char {
+.textify .char {
   position: relative;
 }
 
 /* ------------------------------------------- */
 
-.textify-title .word {
+.textify .line-box,
+.textify .line {
   overflow: hidden;
 }

@@ -5,6 +5,7 @@ const Config = {
   wordsClass: "word", // class name for words
   linesClass: "line", // class name for lines
   position: "relative", // absolute or relative
+  largeText: false, // true or false
   observer: {
     repeat: false, // true or false
     threshold: 0.5 // 0.0 ~ 1.0
@@ -12,20 +13,18 @@ const Config = {
   animation: {
     by: "chars", // chars or words or lines
     duration: 0.5, // seconds
-    stagger: 0.1, // seconds
+    stagger: 0.05, // seconds
     delay: 0.0, // seconds
     ease: "ease", // ease or linear or cubic-bezier
-    overflow: false, // true or false
     customAnimation: false, // true or false
     animateProps: {
-      opacity: 0, // 0 ~ 1
-      y: 100, // -100 ~ 100 (%)
+      opacity: 1, // 0 ~ 1
+      y: "100%", // -100 ~ 100 (%)
       x: 0, // -100 ~ 100 (%)
       scale: 1, // 0 ~ 1
       rotate: 0, // -360 ~ 360
       skewX: 0, // -360 ~ 360
-      skewY: 0, // -360 ~ 360
-      ease: "ease" // ease or linear or cubic-bezier
+      skewY: 0 // -360 ~ 360
     }
   }
 };
