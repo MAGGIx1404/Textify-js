@@ -19,10 +19,13 @@ export default class Texts {
   constructor({ element, controls }) {
     this.element = element;
     this.controls = controls;
+
     this.observer = null;
     this.text = null;
     this.textParts = {};
     this.animatedElements = [];
+
+    this.isError = false;
 
     this.threshold = this.controls.observer.threshold;
     this.repeat = this.controls.observer.repeat;
@@ -44,9 +47,14 @@ export default class Texts {
   _split() {
     // if largeText is true, split the text by lines and throw an error
     if (this.controls.largeText) {
-      this.controls.splitType = "lines";
       if (this.controls.splitType !== "lines") {
-        return new Error("Textify: Large text must be split by lines only. Please set splitType to 'lines'");
+        this.isError = true;
+        throw Error("Textify: Large text must be split by lines only. Please set splitType to 'lines'");
+      }
+
+      if (this.animation.by !== "lines") {
+        this.isError = true;
+        throw Error("Textify: Large text must be animated by lines only. Please set animation.by to 'lines'");
       }
     }
 
@@ -63,19 +71,33 @@ export default class Texts {
       words: this.text.words,
       lines: this.text.lines
     };
+
     if (this.animation.by === "chars" && this.textParts.chars.length > 0) {
       this.animatedElements = this.textParts.chars;
+      this.animatedElements.forEach((el, index) => {
+        el.setAttribute("data-char", el.textContent);
+        el.setAttribute("data-char-index", index);
+      });
     }
     if (this.animation.by === "words" && this.textParts.words.length > 0) {
       this.animatedElements = this.textParts.words;
+      this.animatedElements.forEach((el, index) => {
+        el.setAttribute("data-word", el.textContent);
+        el.setAttribute("data-word-index", index);
+      });
     }
     if (this.animation.by === "lines" && this.textParts.lines.length > 0) {
       this.animatedElements = this.textParts.lines;
+      this.animatedElements.forEach((el, index) => {
+        el.setAttribute("data-line", el.textContent);
+        el.setAttribute("data-line-index", index);
+      });
     }
 
     if (this.controls.largeText) {
       if (this.textParts.lines.length === 0) {
-        return new Error("Textify: Large text must have at least one line");
+        this.isError = true;
+        throw Error("Textify: Large text must have at least one line");
       }
 
       this.textParts.lines.forEach((line) => {
@@ -106,6 +128,7 @@ export default class Texts {
   }
 
   animateIn() {
+    if (this.isError) return;
     if (this.animation.customAnimation) {
       return this.element.classList.add("textify-custom-animation");
     }
@@ -126,6 +149,7 @@ export default class Texts {
   }
 
   animateOut() {
+    if (this.isError) return;
     if (this.animation.customAnimation) {
       return this.element.classList.remove("textify-custom-animation");
     }
@@ -133,6 +157,7 @@ export default class Texts {
     GSAP.set(this.animatedElements, {
       duration: 0.1, // for better performance and to avoid flickering
       stagger: 0, // for better performance and to avoid flickering
+      transformOrigin: this.animation.transformOrigin,
       opacity: this.animation.animateProps.opacity,
       y: this.animation.animateProps.y,
       x: this.animation.animateProps.x,

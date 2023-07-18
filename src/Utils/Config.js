@@ -17,6 +17,7 @@ const Config = {
     delay: 0.0, // seconds
     ease: "ease", // ease or linear or cubic-bezier
     customAnimation: false, // true or false
+    transformOrigin: "center center", // center center or top left or top center or top right or center right or bottom right or bottom center or bottom left or center left
     animateProps: {
       opacity: 1, // 0 ~ 1
       y: "100%", // -100 ~ 100 (%)

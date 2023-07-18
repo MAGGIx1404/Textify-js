@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+
 a,
 abbr,
 acronym,
@@ -208,9 +210,9 @@ ul {
 }
 
 .paragraph {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 500;
-  line-height: 2.4rem;
+  line-height: 3rem;
 }
 
 @media only screen and (max-width: 812px) {
@@ -258,7 +260,7 @@ html {
 
 body {
   overscroll-behavior: none;
-  font-family: MessinaSansWeb SemiBold;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-display: swap;
   color: #262523;
@@ -321,15 +323,6 @@ textarea {
   border-radius: 0;
   outline: none;
   pointer-events: auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: MessinaSansWeb Bold;
 }
 
 .loader {

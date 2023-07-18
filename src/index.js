@@ -37,9 +37,9 @@ export default class Textify {
     this.DEFAULT_ELEMENT = options.el || "[data-textify]";
     this.options = options;
     this.config = Config;
-    this.controls = deepMerge(this.config, this.options);
 
-    console.log(this.controls, "this.controls");
+    // Merge the options with the default config.
+    this.controls = deepMerge(this.config, this.options);
 
     // Check if the browser is supported.
     if (isBrowser) {
@@ -57,11 +57,7 @@ export default class Textify {
   }
 }
 
-new Textify({
-  el: ".paragraph",
-  largeText: true,
-  animation: {
-    by: "lines",
-    stagger: 0.2
-  }
-});
+// make Textify global
+if (isBrowser) {
+  window.Textify = Textify;
+}
