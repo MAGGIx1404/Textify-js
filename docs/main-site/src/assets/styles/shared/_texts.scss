@@ -1,0 +1,81 @@
+.title {
+  font-size: 10rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+
+  //   title animation
+  .char {
+    &::after {
+      visibility: visible !important;
+      top: 100%;
+      content: attr(data-char);
+      display: block;
+    }
+
+    &::before {
+      visibility: visible !important;
+      top: -100%;
+      content: attr(data-char);
+      display: block;
+    }
+  }
+
+  &-green {
+    color: $color-green-2;
+  }
+}
+
+.sub-title {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.small-title {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  color: $color-green-2;
+}
+
+.paragraph {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.small-paragraph {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.content {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $color-light-2;
+
+  &.note {
+    color: $color-red;
+    font-weight: 500;
+  }
+
+  .tag {
+    background: $color-dark-2;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid $color-dark-3;
+  }
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.green {
+  color: $color-green-2;
+}

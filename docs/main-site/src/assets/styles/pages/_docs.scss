@@ -1,0 +1,37 @@
+.docs {
+  padding-left: 30rem;
+
+  .banner {
+    width: 100%;
+    height: auto;
+    padding: 12rem 0;
+
+    .container {
+      background: $color-dark-2;
+      border-radius: 10px;
+      text-align: center;
+      padding: 10rem 0;
+
+      h1 {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .doc-section {
+    .container {
+      padding-bottom: 10rem;
+      gap: 4rem;
+
+      .doc-box {
+        width: 100%;
+        height: auto;
+        gap: 2rem;
+
+        p {
+          width: 80%;
+        }
+      }
+    }
+  }
+}

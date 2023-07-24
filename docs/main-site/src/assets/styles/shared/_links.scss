@@ -1,0 +1,27 @@
+.logo {
+  font-size: 3rem;
+  font-weight: 600;
+  color: $color-green-2;
+  margin-right: 4rem;
+}
+
+.navigation-link {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.bg-link {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  background: $color-green;
+  border: 1px solid $color-green-2;
+  border-radius: 10px;
+  padding: 1.25rem 2.5rem;
+
+  &-dark {
+    background: $color-dark-2;
+    border: 1px solid $color-dark-3;
+  }
+}

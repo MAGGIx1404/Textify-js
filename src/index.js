@@ -55,6 +55,24 @@ export default class Textify {
       });
     }
   }
+
+  animateIn() {
+    this.ANIMATIONS.forEach((animation) => {
+      animation.animateIn();
+    });
+  }
+
+  animateOut() {
+    this.ANIMATIONS.forEach((animation) => {
+      animation.animateOut();
+    });
+  }
+
+  reset() {
+    this.ANIMATIONS.forEach((animation) => {
+      animation.reset();
+    });
+  }
 }
 
 // make Textify global

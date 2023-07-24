@@ -1,0 +1,83 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: initial;
+  box-sizing: border-box;
+  font-size: calc(100vw / 1920 * 10);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  @media only screen and (max-width: 812px) {
+    font-size: calc(100vw / 375 * 10) !important;
+  }
+}
+
+body {
+  overscroll-behavior: none;
+  font-family: $font-inter;
+  font-weight: 400;
+  font-display: swap;
+  color: $color-light;
+  background: $color-dark;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  user-select: none;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: none;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+input,
+textarea {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  pointer-events: auto;
+}
+
+.container {
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+}

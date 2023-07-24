@@ -38,7 +38,7 @@ export default class Texts {
     // createObserver
     if (isBrowser && "IntersectionObserver" in window) {
       this.createObserver();
-      this.customAnimation ? null : this.animateOut();
+      this.customAnimation ? null : this.reset();
     } else {
       this.customAnimation ? null : this.animateIn();
     }
@@ -119,7 +119,7 @@ export default class Texts {
           this.customAnimation ? null : this.animateIn();
           this.repeat ? null : this.observer.unobserve(entry.target);
         } else {
-          this.customAnimation ? null : this.animateOut();
+          this.customAnimation ? null : this.reset();
           this.repeat ? entry.target.classList.remove("is-animated") : null;
         }
       });
@@ -149,6 +149,27 @@ export default class Texts {
   }
 
   animateOut() {
+    if (this.isError) return;
+    if (this.animation.customAnimation) {
+      return this.element.classList.remove("textify-custom-animation");
+    }
+
+    GSAP.to(this.animatedElements, {
+      duration: this.animation.duration,
+      stagger: this.animation.stagger,
+      transformOrigin: this.animation.transformOrigin,
+      opacity: this.animation.animateProps.opacity,
+      y: this.animation.animateProps.y,
+      x: this.animation.animateProps.x,
+      scale: this.animation.animateProps.scale,
+      rotate: this.animation.animateProps.rotate,
+      skewX: this.animation.animateProps.skewX,
+      skewY: this.animation.animateProps.skewY,
+      ease: this.animation.ease
+    });
+  }
+
+  reset() {
     if (this.isError) return;
     if (this.animation.customAnimation) {
       return this.element.classList.remove("textify-custom-animation");
