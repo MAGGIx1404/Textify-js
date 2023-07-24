@@ -1,6 +1,7 @@
 <template>
   <router-view v-slot="{ Component }">
     <Navigation />
+    <SideBar v-if="$route.name === 'documentation'" />
     <transition :name="transition" mode="out-in">
       <component :is="Component" :key="$route.name" />
     </transition>
@@ -9,6 +10,8 @@
 
 <script>
 import Navigation from '@/components/Navigation.vue'
+import SideBar from '@/components/SideBar.vue'
+
 export default {
   name: 'App',
   data() {
@@ -17,7 +20,8 @@ export default {
     }
   },
   components: {
-    Navigation
+    Navigation,
+    SideBar
   },
   mounted() {
     setTimeout(() => {

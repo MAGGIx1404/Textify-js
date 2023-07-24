@@ -5,8 +5,11 @@ body {
   height: auto;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 html {
-  scroll-behavior: initial;
   box-sizing: border-box;
   font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;

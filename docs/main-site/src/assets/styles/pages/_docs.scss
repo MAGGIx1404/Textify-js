@@ -31,7 +31,55 @@
         p {
           width: 80%;
         }
+
+        ul.options-list {
+          width: 100%;
+          height: auto;
+
+          li {
+            width: 100%;
+            height: auto;
+            padding: 2rem 0;
+            border-bottom: 2px solid $color-dark-3;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+
+            &.no-border {
+              border: none;
+            }
+
+            p {
+              width: 100%;
+            }
+
+            .option-name {
+              flex: 0 0 10%;
+              max-width: 10%;
+            }
+
+            .context {
+              flex: 0 0 85%;
+              max-width: 85%;
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              gap: 1.5rem;
+            }
+          }
+        }
       }
+    }
+  }
+
+  .thanks {
+    min-height: auto;
+    .container {
+      text-align: center;
+      padding: 5rem 0 15rem 0;
     }
   }
 }

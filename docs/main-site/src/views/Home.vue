@@ -53,7 +53,7 @@
     <section class="extra-section">
       <div class="container">
         <h1 class="sub-title">Let's build <span class="bold green">animations</span></h1>
-        <router-link to="/" class="bg-link"> Get Started </router-link>
+        <router-link to="/documentation" class="bg-link"> Get Started </router-link>
       </div>
     </section>
   </MainLayout>
