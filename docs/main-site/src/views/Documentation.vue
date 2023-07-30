@@ -487,6 +487,44 @@
             these data attributes are used to create custom animations. you can use these data
             attributes in your <span class="tag">CSS</span> to create custom animations.
           </p>
+          <h1 class="small-title">Important Tip</h1>
+          <p class="content">
+            When you are using <span class="tag green">Textify</span> in your project, make sure
+            call the <span class="tag green">Textify</span>'s instance methods after the webpage's
+            all <span class="tag green">fonts</span> or
+            <span class="tag green">font-family</span> are loaded. otherwise, animation will broke
+            the animation.
+          </p>
+          <p class="content">
+            We recommend to use
+            <a
+              class="tag html-color"
+              href="https://www.npmjs.com/package/fontfaceobserver"
+              target="_blank"
+            >
+              fontfaceobserver</a
+            >
+            to detect the fonts are loaded or not. and then call the
+            <span class="tag green">Textify</span>'s instance methods. you can use
+            <span class="tag green">Textify</span> like this:
+          </p>
+          <CodeBox tag="JS">
+            <code class="content">
+              import Textify from "textify.js";
+              <br />
+              import FontFaceObserver from "fontfaceobserver";
+              <br />
+              <br />
+              const font = new FontFaceObserver("Roboto");
+              <br />
+              <br />
+              font.load().then(() => {
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;new Textify();
+              <br />
+              });
+            </code>
+          </CodeBox>
         </div>
         <div class="bg-line-full"></div>
       </div>

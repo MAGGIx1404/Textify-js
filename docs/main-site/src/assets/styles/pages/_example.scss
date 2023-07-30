@@ -20,11 +20,17 @@
   }
 
   .animation-section {
+    padding: 10rem 0;
+
+    .top-content {
+      text-align: center;
+    }
+
     .container {
-      padding: 20rem 0 10rem 0;
       flex-wrap: wrap;
       justify-content: space-between;
       row-gap: 4rem;
+      margin-top: 5rem;
 
       .animationbox-wrapper {
         width: 49%;
@@ -39,6 +45,10 @@
           border-radius: 10px;
           display: grid;
           place-items: center;
+
+          &.content-animation-box {
+            padding: 10rem;
+          }
 
           .code-btn {
             position: absolute;
@@ -67,6 +77,10 @@
           }
         }
       }
+    }
+
+    h1.sub-title {
+      text-align: center;
     }
   }
 }

@@ -7,7 +7,8 @@
         <p class="paragraph">
           Textify.js is a animation engine for web typography animations, which are use to create
           smooth, creative or seamless animations of typography. Also it’s provide multiple
-          animations types or custom animations on <a href="/" class="bold green">GSAP</a>'s power.
+          animations types or custom animations on
+          <a href="https://greensock.com/gsap/" target="_blank" class="bold green">GSAP</a>'s power.
         </p>
         <div class="btns flex-row-center">
           <router-link to="/example" class="bg-link">Live Example</router-link>
@@ -47,7 +48,7 @@
             </p>
           </li>
         </ul>
-        <p class="small-paragraph extra">Coming soon more features...</p>
+        <p class="small-paragraph extra">Working on other features, stay tuned!</p>
       </div>
     </section>
     <section class="extra-section">

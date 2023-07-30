@@ -1,26 +1,29 @@
 <div align="center">
   <h1>
-    <img width="600" src="./logo.png" alt="logo">
+    <img width="600" src="./logo.svg" alt="logo">
   </h1>
-  <p>Simple scroll based text reveal animation library.</p>
-  
+  <p>Next Generation Text Animation Library.</p>
   <p>
     <img src="https://data.jsdelivr.com/v1/package/npm/textify.js/badge?style=rounded">
-    <img src="https://img.shields.io/npm/v/textify.js?color=orange&label=version">
-    <img src="https://img.shields.io/badge/License-MIT-orange">
-    <img src="https://img.shields.io/badge/maintained-yes-orange" alt="maintained - yes">
-    <a href="/CONTRIBUTING.md" title="Go to contributions doc"><img src="https://img.shields.io/badge/contributions-welcome-orange" alt="contributions - welcome"></a>
-    <a href="https://www.javascript.com/" title="Go to JavaScript homepage"><img src="https://img.shields.io/badge/Made_with-JavaScript-orange?logo=javascript&logoColor=white" alt="Made with JavaScript"></a>
+    <img src="https://img.shields.io/npm/v/textify.js?color=green&label=version">
+    <img src="https://img.shields.io/badge/License-MIT-green">
+    <img src="https://img.shields.io/badge/maintained-yes-green" alt="maintained - yes">
+    <a href="/CONTRIBUTING.md" title="Go to contributions doc"><img src="https://img.shields.io/badge/contributions-welcome-green" alt="contributions - welcome"></a>
+    <a href="https://www.javascript.com/" title="Go to JavaScript homepage"><img src="https://img.shields.io/badge/Made_with-JavaScript-green?logo=javascript&logoColor=yellow" alt="Made with JavaScript"></a>
   </p>
   <p>
     <a href="https://maggix1404.github.io/Textify-js/" target="_blank">
-    ⛰️<br>
-    <b>DEMO</b></a>
+    <img src="./mini-logo.svg" alt='mini-logo' width='30px'>
+    <br>
+    <b style='color:#3FCF8E; text-decoration: 1px underline #3FCF8E;'>Live Examples</b></a>
   </p>
 </div>
 <br>
 
 ## Getting Started
+Textify.js is a animation engine for web typography animations, which are use to create smooth, creative or seamless animations of typography. Also it’s provide multiple
+animations types or custom animations on <a href="https://greensock.com/gsap/" target="_blank" style="color:#3FCF8E;">GSAP</a>'s power.
+
 #
 ## Using packge manager
 
@@ -48,9 +51,7 @@ yarn add textify.js
 ## ES6 module
 ```html
 <script type="module">
-    import textifyJs from 'https://cdn.jsdelivr.net/npm/textify.js/+esm';
-
-    const { Textify } = textifyJs;
+    import Textify from 'https://cdn.jsdelivr.net/npm/textify.js/+esm';
 
     new Textify();
 </script>

@@ -2,6 +2,7 @@ import '@/library/Textify.min.css'
 import '@/assets/styles/index.scss'
 
 import FontFaceObserver from 'fontfaceobserver'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'

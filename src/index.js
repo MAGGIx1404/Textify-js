@@ -28,7 +28,7 @@ function deepMerge(target, source) {
 // Textify
 // @param options Object - The options object.
 // @returns Object - The Textify instance.
-export default class Textify {
+class Textify {
   /**
    * @constructor
    * @param {Object} options
@@ -57,25 +57,33 @@ export default class Textify {
   }
 
   animateIn() {
+    !isBrowser && console.log("Textify is not supported in this environment.");
     this.ANIMATIONS.forEach((animation) => {
       animation.animateIn();
     });
   }
 
   animateOut() {
+    !isBrowser && console.log("Textify is not supported in this environment.");
     this.ANIMATIONS.forEach((animation) => {
       animation.animateOut();
     });
   }
 
   reset() {
+    !isBrowser && console.log("Textify is not supported in this environment.");
     this.ANIMATIONS.forEach((animation) => {
       animation.reset();
     });
   }
 }
 
+export default Textify;
+
 // make Textify global
 if (isBrowser) {
   window.Textify = Textify;
+} else {
+  global.Textify = Textify;
+  console.log("Textify is not supported in this environment.");
 }
