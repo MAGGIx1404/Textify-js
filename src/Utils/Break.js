@@ -1,4 +1,5 @@
 /* eslint-disable no-misleading-character-class */
+
 let _trimExp = /(^\s+|\s+$)/g;
 
 export const emojiExp =

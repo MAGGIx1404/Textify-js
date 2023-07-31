@@ -61,7 +61,9 @@
 </template>
 
 <script>
+import Textify from 'textify.js'
 import MainLayout from '@/layouts/MainLayout.vue'
+
 export default {
   name: 'Home',
   data() {

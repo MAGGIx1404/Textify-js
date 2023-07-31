@@ -32,11 +32,18 @@ class Textify {
   /**
    * @constructor
    * @param {Object} options
+   * @param {Object} engine
    * **/
-  constructor(options) {
+  constructor(options, engine) {
     this.DEFAULT_ELEMENT = options.el || "[data-textify]";
     this.options = options;
     this.config = Config;
+    this.engine = engine;
+
+    // if engine is not defined, throw an error
+    if (!this.engine) {
+      throw new Error("engine is not defined. Please import a gsap. See https://greensock.com/docs/v3/Installation for more info.");
+    }
 
     // Merge the options with the default config.
     this.controls = deepMerge(this.config, this.options);
@@ -50,7 +57,8 @@ class Textify {
       this.ANIMATIONS = mapEach(this.TARGETS, (element) => {
         return new Texts({
           element: element,
-          controls: this.controls
+          controls: this.controls,
+          engine: this.engine
         });
       });
     }

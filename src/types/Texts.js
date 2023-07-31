@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-// import gsap for animation
-import GSAP from "gsap";
+/* eslint-disable no-undef */
 import Splitter from "../utils/Text";
 import { isBrowser } from "../utils/isBrowser";
 
@@ -15,10 +13,12 @@ export default class Texts {
    * @constructor
    * @param {element} element - the element to animate
    * @param {controls} controls - the controls object
+   * @param {engine} engine - the engine object
    * **/
-  constructor({ element, controls }) {
+  constructor({ element, controls, engine }) {
     this.element = element;
     this.controls = controls;
+    this.engine = engine;
 
     this.observer = null;
     this.text = null;
@@ -133,7 +133,7 @@ export default class Texts {
       return this.element.classList.add("textify-custom-animation");
     }
 
-    GSAP.to(this.animatedElements, {
+    this.engine.to(this.animatedElements, {
       opacity: 1,
       y: 0,
       x: 0,
@@ -154,7 +154,7 @@ export default class Texts {
       return this.element.classList.remove("textify-custom-animation");
     }
 
-    GSAP.to(this.animatedElements, {
+    this.engine.to(this.animatedElements, {
       duration: this.animation.duration,
       stagger: this.animation.stagger,
       transformOrigin: this.animation.transformOrigin,
@@ -175,7 +175,7 @@ export default class Texts {
       return this.element.classList.remove("textify-custom-animation");
     }
 
-    GSAP.set(this.animatedElements, {
+    this.engine.set(this.animatedElements, {
       duration: 0.1, // for better performance and to avoid flickering
       stagger: 0, // for better performance and to avoid flickering
       transformOrigin: this.animation.transformOrigin,
