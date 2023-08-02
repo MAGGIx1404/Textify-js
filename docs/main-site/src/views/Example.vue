@@ -7,12 +7,8 @@
         <p class="paragraph banner-text">
           You can create multiple, different or creative typography animations with Textify.js. you
           can get here some selected or creative animations for your project. also you can create
-          your custom animations and get code from our
-          <router-link to="/" class="bold green">Animation creator</router-link>.
+          your custom animations use in your project.
         </p>
-        <div class="btns">
-          <router-link to="/" class="bg-link">Animation creator</router-link>
-        </div>
         <div class="bg-line"></div>
       </div>
     </section>
