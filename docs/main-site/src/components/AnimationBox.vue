@@ -12,6 +12,9 @@
 </template>
 
 <script>
+import Textify from 'textify.js'
+import gsap from 'gsap'
+
 export default {
   name: 'AnimationBox',
   props: {
@@ -48,20 +51,23 @@ export default {
             ease: '${this.config.ease}',
             animateProps: ${JSON.stringify(this.config.animateProps)}
             }
-        })`
+        },gsap)`
       navigator.clipboard.writeText(code)
     }
   },
   mounted() {
-    this.animation = new Textify({
-      el: `.${this.className}`,
-      animation: {
-        stagger: this.config.stagger,
-        duration: this.config.duration,
-        ease: this.config.ease,
-        animateProps: this.config.animateProps
-      }
-    })
+    this.animation = new Textify(
+      {
+        el: `.${this.className}`,
+        animation: {
+          stagger: this.config.stagger,
+          duration: this.config.duration,
+          ease: this.config.ease,
+          animateProps: this.config.animateProps
+        }
+      },
+      gsap
+    )
   }
 }
 </script>

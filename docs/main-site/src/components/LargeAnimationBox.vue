@@ -12,6 +12,9 @@
 </template>
 
 <script>
+import Textify from 'textify.js'
+import gsap from 'gsap'
+
 export default {
   name: 'LargeAnimationBox',
   props: {
@@ -52,24 +55,27 @@ export default {
             transformOrigin: '${this.config.transformOrigin}',
             animateProps: ${JSON.stringify(this.config.animateProps)}
             }
-        })`
+        }, gsap)`
       navigator.clipboard.writeText(code)
     }
   },
   mounted() {
-    this.animation = new Textify({
-      el: `.${this.className}`,
-      splitType: 'lines',
-      largeText: true,
-      animation: {
-        by: 'lines',
-        stagger: this.config.stagger,
-        duration: this.config.duration,
-        ease: this.config.ease,
-        transformOrigin: this.config.transformOrigin,
-        animateProps: this.config.animateProps
-      }
-    })
+    this.animation = new Textify(
+      {
+        el: `.${this.className}`,
+        splitType: 'lines',
+        largeText: true,
+        animation: {
+          by: 'lines',
+          stagger: this.config.stagger,
+          duration: this.config.duration,
+          ease: this.config.ease,
+          transformOrigin: this.config.transformOrigin,
+          animateProps: this.config.animateProps
+        }
+      },
+      gsap
+    )
   }
 }
 </script>
