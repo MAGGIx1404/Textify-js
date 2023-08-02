@@ -12,7 +12,7 @@
     <a href="https://www.javascript.com/" title="Go to JavaScript homepage"><img src="https://img.shields.io/badge/Made_with-JavaScript-green?logo=javascript&logoColor=yellow" alt="Made with JavaScript"></a>
   </p>
   <p>
-    <a href="https://maggix1404.github.io/Textify-js/" target="_blank">
+    <a href="https://textify-js.vercel.app/example" target="_blank">
     <img src="https://res.cloudinary.com/drnquxnie/image/upload/v1690790528/mini-logo_tzz6do.svg" alt='mini-logo' width='30px'>
     <br>
     <b style='color:#3FCF8E; text-decoration: 1px underline #3FCF8E;'>Live Examples</b></a>
@@ -113,15 +113,15 @@ new Textify()
     }
 ```
 
-For, more information about configs, check <a href="/" target="_blank" style="color:#3FCF8E;">Documentation</a>
+For, more information about configs, check <a href="https://textify-js.vercel.app/documentation" target="_blank" style="color:#3FCF8E;">Documentation</a>
 
 #
 # Documentation
 Check main documentation of Textify.js here:
 
-- [Site](https://maggix1404.github.io/Textify-js/)
-- [Documentation & Examples](https://maggix1404.github.io/Textify-js/guide/index.html)
-- [Demo](https://maggix1404.github.io/Textify-js/index.html)
+- [Site](https://textify-js.vercel.app)
+- [Documentation & Examples](https://textify-js.vercel.app/documentation)
+- [Demo](https://textify-js.vercel.app/example)
 
 #
 # Methods

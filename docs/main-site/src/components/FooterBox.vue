@@ -8,6 +8,10 @@
         Made with <span class="green">❤</span> by
         <a href="https://github.com/MAGGIx1404" target="_blank" class="bold green">MAGGIx1404</a>
       </p>
+      <p class="content">
+        Design copied from
+        <a href="https://supabase.com/" target="_blank" class="bold green">Supabase</a>
+      </p>
     </div>
   </footer>
 </template>
