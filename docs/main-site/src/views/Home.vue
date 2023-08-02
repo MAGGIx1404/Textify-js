@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 import Textify from 'textify.js'
 import MainLayout from '@/layouts/MainLayout.vue'
 
@@ -75,28 +76,34 @@ export default {
     MainLayout
   },
   mounted() {
-    var animationsTitle = new Textify({
-      el: '.banner-title',
-      animation: {
-        animateProps: {
-          y: '-100%'
-        },
-        stagger: 0.025,
-        duration: 0.7,
-        ease: 'expo.inOut'
-      }
-    })
+    var animationsTitle = new Textify(
+      {
+        el: '.banner-title',
+        animation: {
+          animateProps: {
+            y: '-100%'
+          },
+          stagger: 0.025,
+          duration: 0.7,
+          ease: 'expo.inOut'
+        }
+      },
+      gsap
+    )
 
-    var animationsText = new Textify({
-      el: '.paragraph',
-      splitType: 'lines',
-      largeText: true,
-      animation: {
-        by: 'lines',
-        ease: 'power2',
-        stagger: 0.075
-      }
-    })
+    var animationsText = new Textify(
+      {
+        el: '.paragraph',
+        splitType: 'lines',
+        largeText: true,
+        animation: {
+          by: 'lines',
+          ease: 'power2',
+          stagger: 0.075
+        }
+      },
+      gsap
+    )
 
     this.animations.push(animationsTitle, animationsText)
   }

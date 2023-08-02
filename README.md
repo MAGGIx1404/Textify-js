@@ -1,6 +1,6 @@
 <div align="center">
   <h1>
-    <img width="600" src="./logo.svg" alt="logo">
+    <img width="600" src="https://res.cloudinary.com/drnquxnie/image/upload/v1690790528/logo_djcdby.svg" alt="logo">
   </h1>
   <p>Next Generation Text Animation Library.</p>
   <p>
@@ -13,7 +13,7 @@
   </p>
   <p>
     <a href="https://maggix1404.github.io/Textify-js/" target="_blank">
-    <img src="./mini-logo.svg" alt='mini-logo' width='30px'>
+    <img src="https://res.cloudinary.com/drnquxnie/image/upload/v1690790528/mini-logo_tzz6do.svg" alt='mini-logo' width='30px'>
     <br>
     <b style='color:#3FCF8E; text-decoration: 1px underline #3FCF8E;'>Live Examples</b></a>
   </p>
