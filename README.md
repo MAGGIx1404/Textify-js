@@ -111,7 +111,6 @@ new Textify()
       skewX: 0, // -360 ~ 360
       skewY: 0 // -360 ~ 360
     }
-  }
 ```
 
 For, more information about configs, check <a href="/" target="_blank" style="color:#3FCF8E;">Documentation</a>
