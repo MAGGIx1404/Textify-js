@@ -30,10 +30,10 @@
         <div class="doc-box flex-column-start" id="usage">
           <h1 class="small-title">Basic Usage</h1>
           <p class="content">
-            Textify can be called without parameters, and it will use the default options. Textify
-            converts the text into a small <span class="tag">div</span> &
-            <span class="tag">span</span> and add a class to each. You can use the class to create
-            css animations.
+            Textify can be called without parameters, but only define
+            <span class="tag">engine</span> and it will use the default options. Textify converts
+            the text into a small <span class="tag">div</span> & <span class="tag">span</span> and
+            add a class to each. You can use the class to create css animations.
           </p>
           <p class="note content">
             Note: Textify.js's animations are not working properly without
@@ -52,26 +52,38 @@
               https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js</code
             >
           </CodeBox>
+          <p class="content bold green">GSAP (Engine) :</p>
+          <CodeBox tag="HTML">
+            <code class="content">
+              https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js</code
+            >
+          </CodeBox>
         </div>
         <div class="bg-line-full"></div>
         <div class="doc-box flex-column-start" id="install">
           <h1 class="small-title">Installation</h1>
           <p class="content bold">Install Textify.js from NPM:</p>
           <CodeBox tag="BASH">
-            <code class="content">npm install textify.js --save</code>
-          </CodeBox>
-          <p class="content bold">import Textify.js in your project and use it like this:</p>
-          <CodeBox tag="JS">
-            <code class="content">import Textify from "textify.js";</code>
-            <br />
-            <code class="content"> new Textify(); </code>
+            <code class="content">npm install textify.js gsap --save</code>
           </CodeBox>
           <p class="content bold">
-            Or you can use the CDN link in your project and use it like this:
+            import Textify.js and gsap in your project and use it like this:
+          </p>
+          <CodeBox tag="JS">
+            <code class="content">import gsap from "gsap";</code>
+            <code class="content">import Textify from "textify.js";</code>
+            <br />
+            <code class="content"> new Textify({}, gsap); </code>
+          </CodeBox>
+          <p class="content bold">
+            Or you can use the CDN link in your project and use it like this: (default)
           </p>
           <CodeBox tag="HTML">
             <code class="content">
               https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js
+            </code>
+            <code class="content">
+              https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js
             </code>
           </CodeBox>
           <p class="content bold">
@@ -79,9 +91,10 @@
             node.js, and deno. This is the recommended way to use Textify.js.
           </p>
           <CodeBox tag="JS">
+            <code class="content">import gsap from "gsap";</code>
             <code class="content">import Textify from "textify.js";</code>
             <br />
-            <code class="content"> new Textify(); </code>
+            <code class="content"> new Textify({}, gsap); </code>
           </CodeBox>
           <p class="note content">
             Note: Textify.js's animations are not working properly without
@@ -92,9 +105,9 @@
         <div class="bg-line-full"></div>
         <div class="doc-box flex-column-start" id="how">
           <h1 class="small-title">How to use Textify.js?</h1>
-          <p class="content bold">Intialize Textify.js :</p>
+          <p class="content bold">Intialize Textify.js : (connect gsap with it)</p>
           <CodeBox tag="JS">
-            <code class="content">new Textify();</code>
+            <code class="content">new Textify({ }, gsap);</code>
           </CodeBox>
           <p class="content bold">
             Textify.js default selector is <span class="tag">data-textify</span>. So you can use it
@@ -103,6 +116,7 @@
           <CodeBox tag="HTML">
             <code class="content"> &lt;h1 data-textify&gt;Hello World&lt;/h1&gt; </code>
           </CodeBox>
+          <p class="content green">Then, see the magic! and animation will start automatically.</p>
         </div>
         <div class="bg-line-full"></div>
         <div class="doc-box flex-column-start" id="config">

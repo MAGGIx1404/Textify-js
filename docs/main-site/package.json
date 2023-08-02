@@ -25,7 +25,7 @@
     "prettier": "^2.8.8",
     "sass": "^1.64.0",
     "sass-loader": "^13.3.2",
-    "textify.js": "^3.0.0",
+    "textify.js": "^3.0.1",
     "vite": "^4.3.9"
   }
 }
