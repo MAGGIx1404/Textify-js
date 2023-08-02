@@ -1,13 +1,14 @@
 {
   "name": "textify.js",
-  "version": "2.4.3",
-  "description": "Simple scroll based text reveal animation library.",
+  "version": "3.0.0",
+  "description": "Next Generation Text Animation Library",
   "main": "./dist/Textify.min.js",
   "module": "./src/index.js",
   "keywords": [
     "Text-Animation",
     "Text-Animation-Library",
-    "scroll-based-text-animation"
+    "scroll-based-text-animation",
+    "textify.js"
   ],
   "scripts": {
     "dev": "webpack --mode development --watch",
