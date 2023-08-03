@@ -44,7 +44,7 @@ yarn add textify.js
 ```html
 <link src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.css" rel="stylesheet"/>
 
-<script src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.js"></script>
 ```
 
 #
