@@ -42,7 +42,7 @@ yarn add textify.js
 #
 ## Using CDN:
 ```html
-<link src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.css" rel="stylesheet"/>
+<link src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.css" rel="stylesheet"/>
 
 <script src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js"></script>
 ```
