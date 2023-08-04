@@ -52,16 +52,18 @@ yarn add textify.js
 ```html
 <script type="module">
     import Textify from 'https://cdn.jsdelivr.net/npm/textify.js/+esm';
+    import gsap from 'gsap';
 
-    new Textify();
+    new Textify({}, gsap);
 </script>
 ```
 
 #
 ## Usage
-Import Textify.js:
+Import Textify.js and gsap:
 ```javascript
 import Textify from "textify.js";
+import gsap from "gsap";
 ```
 
 Link ```Textify.min.css``` to document:
@@ -75,11 +77,12 @@ Add `data-textify` attribute to your paragraph or an element that contain text.
 <p data-textify>Some cool text.😎😎</p>
 ```
 
-Initialize textify to see magic.
+Initialize textify to see magic (add gsap too).
 ```javascript
 import Textify from "textify.js";
+import gsap from "gsap";
 
-new Textify()
+new Textify({}, gsap);
 ```
 
 <p>By default textify use default configurations for text animations. You can pass an configuration object during initialization to tweak it.</p>
@@ -125,8 +128,8 @@ Check main documentation of Textify.js here:
 
 #
 # Methods
-    Textify contains instance methods. these are used to control the animation. these methods are help to maintain animation stability. these
-    methods are following:
+Textify contains instance methods. these are used to control the animation. these methods are help to maintain animation stability. these
+methods are following:
 
 * `animateIn` - Reveal animation.
 * `animateOut` - Hide animation.
@@ -134,7 +137,7 @@ Check main documentation of Textify.js here:
 
 Example:
 ```javascript
-const textObj = new Textify();
+const textObj = new Textify({}, gsap);
 
 // reveal all animations of textObj
 textObj.animateIn();
