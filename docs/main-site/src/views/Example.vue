@@ -47,6 +47,9 @@
 </template>
 
 <script>
+import Textify from 'textify.js'
+import gsap from 'gsap'
+
 import MainLayout from '@/layouts/MainLayout.vue'
 import AnimationBox from '@/components/AnimationBox.vue'
 import LargeAnimationBox from '@/components/LargeAnimationBox.vue'
@@ -151,28 +154,34 @@ export default {
     LargeAnimationBox
   },
   mounted() {
-    new Textify({
-      el: '.banner-title',
-      animation: {
-        stagger: 0.025,
-        duration: 0.7,
-        ease: 'expo.inOut'
-      }
-    })
-
-    new Textify({
-      el: '.banner-text',
-      splitType: 'lines',
-      largeText: true,
-      animation: {
-        by: 'lines',
-        ease: 'power2',
-        stagger: 0.075,
-        animateProps: {
-          y: '-100%'
+    new Textify(
+      {
+        el: '.banner-title',
+        animation: {
+          stagger: 0.025,
+          duration: 0.7,
+          ease: 'expo.inOut'
         }
-      }
-    })
+      },
+      gsap
+    )
+
+    new Textify(
+      {
+        el: '.banner-text',
+        splitType: 'lines',
+        largeText: true,
+        animation: {
+          by: 'lines',
+          ease: 'power2',
+          stagger: 0.075,
+          animateProps: {
+            y: '-100%'
+          }
+        }
+      },
+      gsap
+    )
   }
 }
 </script>

@@ -24,7 +24,7 @@
             Start playing around with your own Textify demo on CodePen with this template that
             includes all of the essentials!
           </p>
-          <a href="/" target="_blank" class="bg-link bg-link-dark">Open in CodePen</a>
+          <a href="https://codepen.io/maggix1404/pen/dyQaELP" target="_blank" class="bg-link bg-link-dark">Open in CodePen</a>
         </div>
         <div class="bg-line-full"></div>
         <div class="doc-box flex-column-start" id="usage">
