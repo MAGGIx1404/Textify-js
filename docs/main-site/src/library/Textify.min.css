@@ -1,4 +1,6 @@
-/* fix safari custom kerning by adding a space after each character */
+/*
+    fix safari custom kerning by adding a space after each character
+*/
 * {
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;

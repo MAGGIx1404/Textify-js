@@ -1,13 +1,14 @@
 {
   "name": "textify.js",
-  "version": "2.4.3",
-  "description": "Simple scroll based text reveal animation library.",
+  "version": "3.0.1",
+  "description": "Next Generation Text Animation Library",
   "main": "./dist/Textify.min.js",
   "module": "./src/index.js",
   "keywords": [
     "Text-Animation",
     "Text-Animation-Library",
-    "scroll-based-text-animation"
+    "scroll-based-text-animation",
+    "textify.js"
   ],
   "scripts": {
     "dev": "webpack --mode development --watch",
@@ -36,7 +37,7 @@
     "css-loader": "^6.7.3",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "size-plugin": "^3.0.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.3",

@@ -1,0 +1,20 @@
+.sidebar {
+  width: 30rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-right: 2px solid $color-dark-3;
+  padding: 15rem 0 5rem 5%;
+
+  ul {
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+
+    li {
+      width: 100%;
+    }
+  }
+}

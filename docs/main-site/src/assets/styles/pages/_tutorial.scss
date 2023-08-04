@@ -1,0 +1,13 @@
+.tutorial {
+  .banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    .container {
+      height: 100vh;
+      gap: 2rem;
+      text-align: center;
+    }
+  }
+}

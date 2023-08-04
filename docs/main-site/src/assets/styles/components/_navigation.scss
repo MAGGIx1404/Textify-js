@@ -1,0 +1,20 @@
+nav.navigation {
+  width: 100%;
+  height: auto;
+  background: $color-dark;
+  border-bottom: 2px solid $color-dark-2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .container {
+    padding: 2rem 0;
+
+    .navigation-links {
+      width: auto;
+      height: auto;
+      gap: 5rem;
+    }
+  }
+}

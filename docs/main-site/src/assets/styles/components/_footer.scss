@@ -1,0 +1,14 @@
+.footer {
+  width: 100%;
+  height: auto;
+  border-top: 2px solid $color-dark-3;
+
+  .container {
+    padding: 5rem 0;
+    text-align: center;
+
+    p {
+      color: rgba($color: $color-light, $alpha: 0.5);
+    }
+  }
+}

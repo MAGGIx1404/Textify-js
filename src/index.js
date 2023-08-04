@@ -1,102 +1,97 @@
-import { Text } from "./Animations";
+/* eslint-disable no-prototype-builtins */
+import Texts from "./types/Texts";
+import { Config } from "./utils/Config";
+import { isBrowser } from "./utils/isBrowser";
+import { mapEach } from "./utils/Dom";
 
-// -------------------------------------------------------------------------------
+// Deep merge two objects.
+// @param target Object - The target object.
+// @param source Object - The source object.
+// @returns Object - The merged object.
+function deepMerge(target, source) {
+  if (typeof target !== "object" || typeof source !== "object") {
+    return source;
+  }
+  const merged = { ...target };
+  for (const key in source) {
+    if (source.hasOwnProperty(key)) {
+      if (merged.hasOwnProperty(key)) {
+        merged[key] = deepMerge(merged[key], source[key]);
+      } else {
+        merged[key] = source[key];
+      }
+    }
+  }
+  return merged;
+}
 
-import { mapEach, DEFAULT, getEasing, isBrowser } from "./utils";
-import { TextifyTitle } from "./plugins";
-
-// -------------------------------------------------------------------------------
-
+// Textify
+// @param options Object - The options object.
+// @returns Object - The Textify instance.
 class Textify {
   /**
    * @constructor
-   * @param {object} options - Configuration object
-   */
-  constructor(options = {}) {
-    if (!options.easing) {
-      options.easing = getEasing("default");
-    } else {
-      try {
-        options.easing = getEasing(options.easing);
-      } catch (err) {
-        throw new Error(err);
-      }
-    }
-    if (!options.fadeEasing) {
-      options.fadeEasing = getEasing("default");
-    } else {
-      try {
-        options.fadeEasing = getEasing(options.fadeEasing);
-      } catch (err) {
-        throw new Error(err);
-      }
+   * @param {Object} options
+   * @param {Object} engine
+   * **/
+  constructor(options, engine) {
+    this.DEFAULT_ELEMENT = options.el || "[data-textify]";
+    this.options = options;
+    this.config = Config;
+    this.engine = engine;
+
+    // if engine is not defined, throw an error
+    if (!this.engine) {
+      throw new Error("engine is not defined. Please import a gsap. See https://greensock.com/docs/v3/Installation for more info.");
     }
 
-    const controller = Object.assign({}, DEFAULT, options);
-    const DEFAULT_TARGET_ELEMENT_SELECTOR = options.selector ? options.selector : "[data-textify]";
+    // Merge the options with the default config.
+    this.controls = deepMerge(this.config, this.options);
 
+    // Check if the browser is supported.
     if (isBrowser) {
-      if (!document.querySelector(DEFAULT_TARGET_ELEMENT_SELECTOR)) {
-        throw new Error("No element found with selector: " + DEFAULT_TARGET_ELEMENT_SELECTOR);
+      if (!document.querySelector(this.DEFAULT_ELEMENT)) {
+        throw new Error(`Textify: Element "${this.DEFAULT_ELEMENT}" is not found.`);
       }
-      this.elements = document.querySelectorAll(DEFAULT_TARGET_ELEMENT_SELECTOR);
-      this.animations = mapEach(this.elements, (element) => {
-        return new Text({
-          element,
-          options: controller
+      this.TARGETS = [...document.querySelectorAll(this.DEFAULT_ELEMENT)];
+      this.ANIMATIONS = mapEach(this.TARGETS, (element) => {
+        return new Texts({
+          element: element,
+          controls: this.controls,
+          engine: this.engine
         });
       });
-      this.elements.forEach((element) => {
-        const spans = element.querySelectorAll("span");
-        spans.forEach((span) => {
-          span.style.display = "inline-block";
-          span.style.overflow = "hidden";
-          span.style.verticalAlign = "top";
-          span.style.transformOrigin = "center";
-        });
-      });
-      this.events();
     }
   }
 
-  // --------
-  events() {
-    window.addEventListener("resize", this.onResize.bind(this));
-  }
-
-  //   animations
-  show() {
-    this.animations.forEach((animation) => {
+  animateIn() {
+    !isBrowser && console.log("Textify is not supported in this environment.");
+    this.ANIMATIONS.forEach((animation) => {
       animation.animateIn();
     });
   }
 
-  hide() {
-    this.animations.forEach((animation) => {
+  animateOut() {
+    !isBrowser && console.log("Textify is not supported in this environment.");
+    this.ANIMATIONS.forEach((animation) => {
       animation.animateOut();
     });
   }
 
-  // --------
-  onResize() {
-    this.animations.forEach((animation) => {
-      animation.onResize && animation.onResize();
-    });
-  }
-
-  // --------
-  onRefresh() {
-    this.animations.forEach((animation) => {
-      animation.onRefresh && animation.onRefresh();
+  reset() {
+    !isBrowser && console.log("Textify is not supported in this environment.");
+    this.ANIMATIONS.forEach((animation) => {
+      animation.reset();
     });
   }
 }
 
-// -------------------------------------------------------------------------------
+export default Textify;
 
-export default { Textify, TextifyTitle };
-
+// make Textify global
 if (isBrowser) {
   window.Textify = Textify;
-  window.TextifyTitle = TextifyTitle;
+} else {
+  global.Textify = Textify;
+  console.log("Textify is not supported in this environment.");
 }

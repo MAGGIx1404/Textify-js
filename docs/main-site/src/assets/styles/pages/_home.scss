@@ -1,0 +1,77 @@
+.home {
+  .banner {
+    .container {
+      padding-top: 20rem;
+      text-align: center;
+
+      .paragraph {
+        width: 60%;
+        margin-top: 2rem;
+      }
+
+      .btns {
+        margin-top: 3rem;
+        gap: 2rem;
+      }
+
+      .bg-line {
+        margin-top: 10rem;
+      }
+    }
+  }
+
+  .guide {
+    width: 100%;
+    height: auto;
+
+    .container {
+      padding: 20rem 0;
+      border-bottom: 2px solid $color-dark-3;
+
+      h1.sub-title {
+        text-align: center;
+      }
+
+      ul {
+        width: 100%;
+        height: auto;
+        margin-top: 5rem;
+        align-items: stretch;
+
+        li {
+          flex: 0 0 24%;
+          max-width: 24%;
+          width: 100%;
+          height: auto;
+          background: $color-dark-2;
+          border: 2px solid $color-dark-3;
+          border-radius: 10px;
+          padding: 4rem;
+
+          p {
+            margin-top: 2rem;
+          }
+        }
+      }
+
+      .extra {
+        text-align: center;
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  .extra-section {
+    width: 100%;
+    height: auto;
+
+    .container {
+      padding: 20rem 0;
+      text-align: center;
+
+      h1 {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
