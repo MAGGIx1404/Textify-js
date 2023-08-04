@@ -24,6 +24,7 @@
 
     .top-content {
       text-align: center;
+      padding: 0 5rem;
     }
 
     .container {
@@ -32,9 +33,17 @@
       row-gap: 4rem;
       margin-top: 5rem;
 
+      @media only screen and (max-width: 812px) {
+        flex-direction: column;
+      }
+
       .animationbox-wrapper {
         width: 49%;
         height: 40rem;
+
+        @media only screen and (max-width: 812px) {
+          width: 100%;
+        }
 
         .animation-box {
           width: 100%;
@@ -48,6 +57,10 @@
 
           &.content-animation-box {
             padding: 10rem;
+
+            @media only screen and (max-width: 812px) {
+              padding: 5rem;
+            }
           }
 
           .code-btn {
