@@ -4,6 +4,10 @@
   line-height: 1.2;
   letter-spacing: 0.5px;
 
+  @media only screen and (max-width: 812px) {
+    font-size: 6rem;
+  }
+
   //   title animation
   .char {
     &::after {

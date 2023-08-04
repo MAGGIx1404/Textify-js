@@ -16,7 +16,7 @@ html {
   -webkit-font-smoothing: antialiased;
 
   @media only screen and (max-width: 812px) {
-    font-size: calc(100vw / 375 * 10) !important;
+    font-size: calc(100vw / 812 * 10) !important;
   }
 }
 
